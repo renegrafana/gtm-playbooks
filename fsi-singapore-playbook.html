@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FSI Singapore — Prospecting, Qualification & Deep Discovery Playbook</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FFFFFF;
+      --bg2: #F4F4F4;
+      --surface: #FFFFFF;
+      --surface2: #F9F9F9;
+      --border: #E5E5E5;
+      --border2: #D4D4D4;
+      --content: #171717;
+      --muted: #696969;
+      --dim: #AFAFAF;
+      --accent: #FF671D;
+      --accent-bg: #FEE9D4;
+      --accent-border: #FFD0A7;
+      --accent-light: #FFF7F0;
+      --blue: #2970FF;
+      --blue-bg: #D9E7FF;
+      --blue-border: #BDD8FF;
+      --blue-light: #F0F5FF;
+      --green: #04BC4C;
+      --green-bg: #D7F9E3;
+      --green-border: #AAF0C7;
+      --green-light: #F0FDF5;
+      --purple: #8B5CF6;
+      --purple-bg: #F3E8FE;
+      --purple-border: #E0AAFD;
+      --purple-light: #FAF5FF;
+      --red: #DC2626;
+      --red-bg: #FEE2E2;
+      --red-border: #FECACA;
+      --red-light: #FEF2F2;
+      --yellow: #D97706;
+      --yellow-bg: #FEF3C7;
+      --yellow-border: #FDE68A;
+      --yellow-light: #FFFBEB;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--bg); color: var(--content); font-family: 'Inter', sans-serif; line-height: 1.6; }
+
+    /* --- NAV --- */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 48px; display: flex; align-items: center; gap: 28px; height: 56px;
+      overflow-x: auto;
+    }
+    .nav a {
+      color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 500;
+      white-space: nowrap; padding: 16px 0; border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+    .nav a:hover, .nav a.active { color: var(--content); border-color: var(--accent); }
+    .nav-logo { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 15px; color: var(--accent); margin-right: 8px; }
+
+    /* --- HERO --- */
+    .hero {
+      padding: 80px 48px 60px;
+      background: linear-gradient(165deg, var(--accent-light) 0%, var(--bg) 50%);
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-eyebrow {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 16px; display: flex; align-items: center; gap: 8px;
+    }
+    .hero h1 { font-family: 'Poppins', sans-serif; font-size: 42px; font-weight: 800; line-height: 1.1; max-width: 720px; margin-bottom: 14px; color: var(--content); }
+    .hero h1 span { color: var(--accent); }
+    .hero p { font-size: 16px; color: var(--muted); max-width: 600px; line-height: 1.6; }
+    .hero-meta { display: flex; gap: 16px; margin-top: 28px; flex-wrap: wrap; }
+    .hero-tag { font-size: 11px; font-weight: 600; letter-spacing: 0.04em; padding: 6px 14px; border-radius: 100px; }
+    .tag-orange { background: var(--accent-bg); border: 1px solid var(--accent-border); color: #c72f07; }
+    .tag-blue { background: var(--blue-bg); border: 1px solid var(--blue-border); color: #1540e0; }
+    .tag-green { background: var(--green-bg); border: 1px solid var(--green-border); color: #0a5b39; }
+
+    /* --- SECTIONS --- */
+    .section {
+      padding: 60px 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-alt { background: var(--bg2); }
+    .section-label {
+      font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
+    }
+    .section-label i { font-size: 11px; }
+    .section h2 { font-family: 'Poppins', sans-serif; font-size: 28px; font-weight: 700; margin-bottom: 8px; line-height: 1.2; color: var(--content); }
+    .section h2 span { color: var(--accent); }
+    .section .section-sub { font-size: 14px; color: var(--muted); max-width: 640px; margin-bottom: 32px; }
+
+    /* --- CARDS --- */
+    .card-grid { display: grid; gap: 16px; }
+    .grid-2 { grid-template-columns: 1fr 1fr; }
+    .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+    .grid-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: all 0.25s;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .card:hover { border-color: var(--border2); box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+    .card-icon {
+      width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      font-size: 16px; margin-bottom: 16px;
+    }
+    .icon-orange { background: var(--accent-bg); border: 1px solid var(--accent-border); color: #c72f07; }
+    .icon-blue { background: var(--blue-bg); border: 1px solid var(--blue-border); color: #1540e0; }
+    .icon-green { background: var(--green-bg); border: 1px solid var(--green-border); color: #0a5b39; }
+    .icon-purple { background: var(--purple-bg); border: 1px solid var(--purple-border); color: var(--purple); }
+    .icon-red { background: var(--red-bg); border: 1px solid var(--red-border); color: var(--red); }
+    .icon-yellow { background: var(--yellow-bg); border: 1px solid var(--yellow-border); color: var(--yellow); }
+
+    .card h3 { font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 600; margin-bottom: 8px; color: var(--content); }
+    .card p { font-size: 13px; color: var(--muted); line-height: 1.55; }
+    .card ul { list-style: none; padding: 0; }
+    .card li { font-size: 13px; color: var(--muted); padding: 5px 0; padding-left: 18px; position: relative; line-height: 1.45; }
+    .card li::before { content: ''; position: absolute; left: 0; top: 12px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+    .card-label {
+      font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 12px; display: block;
+    }
+
+    /* --- STAT ROW --- */
+    .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
+    .stat-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      padding: 24px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .stat-value { font-family: 'Poppins', sans-serif; font-size: 32px; font-weight: 800; margin-bottom: 6px; }
+    .stat-label { font-size: 12px; color: var(--muted); font-weight: 500; }
+
+    /* --- PERSONA TABLE --- */
+    .persona-table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    .persona-table th {
+      background: var(--bg2); text-align: left; padding: 14px 20px; font-size: 11px;
+      font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+    .persona-table td {
+      padding: 14px 20px; font-size: 13px; color: var(--muted); line-height: 1.5;
+      border-bottom: 1px solid var(--border); vertical-align: top; background: var(--surface);
+    }
+    .persona-table tr:last-child td { border-bottom: none; }
+    .persona-table td:first-child { color: var(--content); font-weight: 600; white-space: nowrap; }
+    .persona-role { display: inline-block; padding: 3px 10px; border-radius: 100px; font-size: 10px; font-weight: 600; }
+
+    /* --- PLAY CARD --- */
+    .play-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      padding: 28px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .play-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+    .play-badge {
+      padding: 4px 12px; border-radius: 100px; font-size: 10px; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .play-card h3 { font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 700; flex: 1; color: var(--content); }
+    .play-body { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .play-section h4 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 10px; }
+    .play-section ul { list-style: none; padding: 0; }
+    .play-section li { font-size: 13px; color: var(--muted); padding: 4px 0; padding-left: 16px; position: relative; line-height: 1.45; }
+    .play-section li::before { content: '›'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+
+    /* --- COMPETITIVE --- */
+    .comp-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      overflow: hidden; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .comp-header {
+      padding: 20px 24px; display: flex; align-items: center; gap: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .comp-header h3 { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; flex: 1; color: var(--content); }
+    .comp-tag { font-size: 10px; font-weight: 600; padding: 3px 10px; border-radius: 100px; }
+    .comp-body { padding: 20px 24px; }
+    .comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .comp-col h4 { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
+    .comp-col.weakness h4 { color: var(--red); }
+    .comp-col.counter h4 { color: var(--green); }
+    .comp-col ul { list-style: none; padding: 0; }
+    .comp-col li { font-size: 13px; color: var(--muted); padding: 4px 0; padding-left: 16px; position: relative; line-height: 1.45; }
+    .comp-col.weakness li::before { content: '−'; position: absolute; left: 0; color: var(--red); font-weight: 700; }
+    .comp-col.counter li::before { content: '+'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+
+    /* --- QUESTION CARDS --- */
+    .q-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      padding: 20px 24px; margin-bottom: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .q-card .q-stage {
+      font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      margin-bottom: 8px; display: inline-block; padding: 3px 10px; border-radius: 100px;
+    }
+    .q-card p { font-size: 14px; color: var(--content); font-style: italic; line-height: 1.5; }
+    .q-card .q-why { font-size: 12px; color: var(--dim); margin-top: 6px; font-style: normal; }
+
+    /* --- REFERENCE CARDS --- */
+    .ref-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      padding: 28px; margin-bottom: 16px; display: flex; gap: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .ref-icon {
+      width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center;
+      justify-content: center; font-size: 20px; flex-shrink: 0;
+    }
+    .ref-body { flex: 1; }
+    .ref-body h3 { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 4px; color: var(--content); }
+    .ref-body .ref-industry { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .ref-body p { font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 10px; }
+    .ref-quote {
+      border-left: 3px solid var(--accent); padding-left: 16px; margin: 14px 0;
+      font-size: 14px; color: var(--content); font-style: italic; line-height: 1.5;
+    }
+    .ref-results { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 14px; }
+    .ref-stat { }
+    .ref-stat .val { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 700; color: var(--content); }
+    .ref-stat .lbl { font-size: 11px; color: var(--muted); }
+    .ref-link { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--accent); text-decoration: none; font-weight: 600; margin-top: 10px; }
+    .ref-link:hover { text-decoration: underline; }
+
+    /* --- VALUE FRAMEWORK --- */
+    .value-card {
+      background: var(--surface); border-radius: 12px; padding: 24px;
+      border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .value-card h3 { font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 700; margin-bottom: 6px; color: var(--content); }
+    .value-card .before { font-size: 12px; color: var(--red); margin-bottom: 4px; }
+    .value-card .after { font-size: 12px; color: #0a5b39; margin-bottom: 12px; }
+    .value-card .metrics-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .value-card .metric-tag { font-size: 11px; padding: 4px 10px; border-radius: 100px; background: var(--bg2); border: 1px solid var(--border); color: var(--muted); }
+
+    /* --- EMAIL CAMPAIGN --- */
+    .email-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      overflow: hidden; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .email-header {
+      padding: 18px 24px; display: flex; align-items: center; gap: 14px;
+      border-bottom: 1px solid var(--border); background: var(--bg2);
+    }
+    .email-badge {
+      padding: 4px 12px; border-radius: 100px; font-size: 10px; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .email-header h3 { font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 700; flex: 1; color: var(--content); }
+    .email-header .email-timing { font-size: 11px; color: var(--muted); font-weight: 500; white-space: nowrap; }
+    .email-meta { padding: 16px 24px; border-bottom: 1px solid var(--border); display: flex; gap: 32px; flex-wrap: wrap; background: var(--surface2); }
+    .email-meta-item { }
+    .email-meta-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--dim); margin-bottom: 2px; }
+    .email-meta-value { font-size: 13px; color: var(--content); font-weight: 500; }
+    .email-body { padding: 24px; }
+    .email-body .email-content { font-size: 13px; color: var(--muted); line-height: 1.7; white-space: pre-line; }
+    .email-body .email-content strong { color: var(--content); }
+    .email-notes {
+      padding: 16px 24px; border-top: 1px solid var(--border); background: var(--bg2);
+      font-size: 12px; color: var(--muted); display: flex; gap: 8px; align-items: flex-start;
+    }
+    .email-notes i { color: var(--accent); margin-top: 2px; flex-shrink: 0; }
+
+    /* --- SEQUENCE TIMELINE --- */
+    .sequence-timeline { display: flex; gap: 0; margin-bottom: 32px; position: relative; align-items: flex-start; }
+    .seq-step { flex: 1; text-align: center; position: relative; padding: 0 8px; }
+    .seq-dot {
+      width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 10px; font-size: 13px; font-weight: 700; position: relative; z-index: 2;
+    }
+    .seq-step::after {
+      content: ''; position: absolute; top: 18px; left: calc(50% + 18px); right: calc(-50% + 18px);
+      height: 2px; background: var(--border); z-index: 1;
+    }
+    .seq-step:last-child::after { display: none; }
+    .seq-label { font-size: 11px; font-weight: 600; color: var(--content); margin-bottom: 2px; }
+    .seq-desc { font-size: 10px; color: var(--muted); line-height: 1.4; }
+
+    /* --- FOOTER --- */
+    .footer { padding: 40px 48px; border-top: 1px solid var(--border); background: var(--bg2); }
+    .footer p { font-size: 12px; color: var(--dim); }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 900px) {
+      .grid-2, .grid-3, .grid-4, .stat-row, .play-body, .comp-grid { grid-template-columns: 1fr; }
+      .hero { padding: 48px 24px 40px; }
+      .section { padding: 40px 24px; }
+      .nav { padding: 0 24px; }
+      .hero h1 { font-size: 32px; }
+      .sequence-timeline { flex-direction: column; gap: 12px; }
+      .seq-step::after { display: none; }
+      .email-meta { flex-direction: column; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <span class="nav-logo"><i class="fas fa-crosshairs"></i></span>
+  <a href="#market" class="active">Market Context</a>
+  <a href="#icp">ICP & Personas</a>
+  <a href="#plays">Sales Plays</a>
+  <a href="#discovery">Discovery Questions</a>
+  <a href="#competition">Competition</a>
+  <a href="#positioning">Positioning</a>
+  <a href="#references">Customer References</a>
+  <a href="#value">Value Framework</a>
+  <a href="#outreach">Outreach Campaign</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow"><i class="fas fa-building-columns"></i> Velocity Sales · FSI · Singapore</div>
+  <h1>FSI Singapore <span>Playbook.</span></h1>
+  <p>Prospecting, qualification, and deep discovery guide for Financial Services accounts in Singapore. Sales plays, ICPs, competitive positioning, customer references, and a ready-to-send outreach campaign.</p>
+  <div class="hero-meta">
+    <span class="hero-tag tag-orange">Banking & Digital Payments</span>
+    <span class="hero-tag tag-blue">Insurance & Wealth Management</span>
+    <span class="hero-tag tag-green">Capital Markets & Fintech</span>
+  </div>
+</div>
+
+<!-- MARKET CONTEXT -->
+<div class="section" id="market">
+  <span class="section-label"><i class="fas fa-globe-asia"></i> Market Context</span>
+  <h2>Singapore FSI <span>Landscape.</span></h2>
+  <p class="section-sub">Singapore is Southeast Asia's financial hub. MAS (Monetary Authority of Singapore) drives strict regulatory oversight, digital transformation mandates, and technology risk management — all of which create fertile ground for observability.</p>
+
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="stat-value" style="color: var(--accent);">200+</div>
+      <div class="stat-label">Banks & FSI institutions in Singapore</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color: var(--blue);">MAS TRM</div>
+      <div class="stat-label">Technology Risk Management guidelines mandate system resilience</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color: #0a5b39;">24/7</div>
+      <div class="stat-label">Always-on digital banking & real-time payments (PayNow, FAST)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value" style="color: var(--purple);">Multi-Cloud</div>
+      <div class="stat-label">Most SG FSIs run hybrid AWS + GCP + on-prem</div>
+    </div>
+  </div>
+
+  <div class="card-grid grid-3">
+    <div class="card">
+      <div class="card-icon icon-orange"><i class="fas fa-landmark"></i></div>
+      <h3>Key Trigger Events</h3>
+      <ul>
+        <li>MAS compliance audits on IT resilience & business continuity</li>
+        <li>Cloud migration mandates (on-prem → AWS/GCP/Azure)</li>
+        <li>Digital banking license launches (digital-only banks)</li>
+        <li>Rising observability costs forcing vendor re-evaluation</li>
+        <li>Kubernetes & microservices adoption in core banking</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-icon icon-blue"><i class="fas fa-shield-halved"></i></div>
+      <h3>Regulatory Drivers</h3>
+      <ul>
+        <li>MAS Technology Risk Management (TRM) guidelines</li>
+        <li>Business Continuity Management (BCM) requirements</li>
+        <li>Data sovereignty — PDPA + cross-border data rules</li>
+        <li>Outsourcing & third-party risk management</li>
+        <li>Real-time reporting on system availability SLAs</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-icon icon-green"><i class="fas fa-building"></i></div>
+      <h3>Target FSI Sub-Segments</h3>
+      <ul>
+        <li><strong>Universal Banks:</strong> DBS, OCBC, UOB, StanChart, HSBC, Citi</li>
+        <li><strong>Digital Banks:</strong> GXS Bank, Trust Bank, MariBank</li>
+        <li><strong>Insurance:</strong> Great Eastern, Prudential, AIA, NTUC Income</li>
+        <li><strong>Capital Markets:</strong> SGX, Broadridge, Refinitiv</li>
+        <li><strong>Fintech / Payments:</strong> Grab Financial, Nium, Thunes</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ICP & PERSONAS -->
+<div class="section section-alt" id="icp">
+  <span class="section-label"><i class="fas fa-user-check"></i> Ideal Customer Profile & Personas</span>
+  <h2>Who to <span>Target.</span></h2>
+  <p class="section-sub">Apply Grafana's 5 ICP criteria to FSI Singapore accounts. 4–5 criteria matched = high priority, 2–3 = qualify further, 0–1 = deprioritize.</p>
+
+  <div class="card-grid grid-2" style="margin-bottom: 32px;">
+    <div class="card">
+      <div class="card-icon icon-orange"><i class="fas fa-star"></i></div>
+      <h3>5 ICP Criteria — FSI Application</h3>
+      <ul>
+        <li><strong>Grafana Familiarity & OSS Usage</strong> — Many SG FSI teams already run self-hosted Grafana, Prometheus, or Loki. Look for OSS footprint signals.</li>
+        <li><strong>Large Engineering Orgs</strong> — Banks like DBS have 10,000+ engineers. High developer:SRE ratios = strong fit.</li>
+        <li><strong>Mission-Critical Apps</strong> — Core banking, payments, trading platforms with strict SLA requirements and direct revenue impact from downtime.</li>
+        <li><strong>Observability Buyers with Experience</strong> — Many SG banks already spend on Datadog, Splunk, or Dynatrace. They understand the need — focus on differentiation.</li>
+        <li><strong>High Complexity & Spend</strong> — Kubernetes, microservices, multi-cloud, high telemetry volume, and fragmented tool sprawl.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-icon icon-blue"><i class="fas fa-bullseye"></i></div>
+      <h3>FSI-Specific Qualification Signals</h3>
+      <ul>
+        <li><strong>Upcoming MAS audit</strong> — Creates urgency for unified monitoring & reporting</li>
+        <li><strong>Cloud migration in progress</strong> — Hybrid environments = visibility gaps = Grafana opportunity</li>
+        <li><strong>Observability contract renewal</strong> — 6 months before renewal is the sweet spot</li>
+        <li><strong>Hiring for platform engineering roles</strong> — Signals observability investment</li>
+        <li><strong>Recent production incident</strong> — Post-mortem often reveals monitoring gaps</li>
+        <li><strong>Tool sprawl frustration</strong> — Multiple teams using different monitoring tools</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 16px; color: var(--content);">Target Personas — FSI Context</h3>
+
+  <table class="persona-table">
+    <thead>
+      <tr>
+        <th>Persona</th>
+        <th>Typical Titles in FSI</th>
+        <th>What They Care About</th>
+        <th>What Gets Them to a Meeting</th>
+        <th>Role</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><i class="fas fa-code" style="color: var(--accent); margin-right: 6px;"></i> User</td>
+        <td>SRE, DevOps Engineer, Platform Engineer, Software Developer, Tech Lead</td>
+        <td>Faster troubleshooting, less context-switching, reducing alert fatigue, correlating metrics/logs/traces quickly during incidents</td>
+        <td>Demos, sample queries, incident walkthroughs, tactical "how-to" content. Lead with time savings and toil reduction.</td>
+        <td><span class="persona-role" style="background: var(--blue-bg); border: 1px solid var(--blue-border); color: #1540e0;">Influencer</span></td>
+      </tr>
+      <tr>
+        <td><i class="fas fa-gears" style="color: var(--accent); margin-right: 6px;"></i> Operator</td>
+        <td>Head of Observability, Platform Engineering Manager, SRE Manager, DevOps Lead, Staff Platform Engineer</td>
+        <td>Consolidating tools, controlling costs at scale, open standards (OTel), scaling observability-as-a-service, MAS compliance reporting</td>
+        <td>Consolidation ROI, cost savings case studies, architecture blueprints, "platform for the platform team" positioning.</td>
+        <td><span class="persona-role" style="background: var(--green-bg); border: 1px solid var(--green-border); color: #0a5b39;">Champion</span></td>
+      </tr>
+      <tr>
+        <td><i class="fas fa-briefcase" style="color: var(--accent); margin-right: 6px;"></i> Executive Buyer</td>
+        <td>CTO, CIO, VP Engineering, VP Infrastructure, Chief Architect, Head of Technology</td>
+        <td>Customer retention via reliability, lower TCO, de-risk operations, vendor lock-in avoidance, MAS compliance, business visibility</td>
+        <td>Business outcome ROI, analyst recognition (Gartner MQ), executive one-pagers. Lead with outcomes, never features. One paragraph max.</td>
+        <td><span class="persona-role" style="background: var(--accent-bg); border: 1px solid var(--accent-border); color: #c72f07;">Decision Maker</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SALES PLAYS -->
+<div class="section" id="plays">
+  <span class="section-label"><i class="fas fa-chess"></i> Sales Plays</span>
+  <h2>Plays That <span>Win in FSI.</span></h2>
+  <p class="section-sub">Four sales motions mapped to FSI Singapore scenarios. Identify the primary motion at the start of each deal cycle to tailor messaging and competitive positioning.</p>
+
+  <div class="play-card">
+    <div class="play-header">
+      <span class="play-badge" style="background: var(--red-bg); border: 1px solid var(--red-border); color: var(--red);">Replace</span>
+      <h3>Competitive Takeout — Replace Incumbent Vendor</h3>
+    </div>
+    <div class="play-body">
+      <div class="play-section">
+        <h4>FSI Scenario</h4>
+        <ul>
+          <li>Bank is frustrated with Datadog/Splunk/Dynatrace costs scaling with telemetry growth</li>
+          <li>Unpredictable billing from proprietary per-host or per-container pricing</li>
+          <li>Vendor lock-in with proprietary agents and query languages</li>
+          <li>Contract renewal window opening in next 6 months</li>
+        </ul>
+      </div>
+      <div class="play-section">
+        <h4>How to Win</h4>
+        <ul>
+          <li>Lead with competitive differentiation — they already know they have a problem</li>
+          <li>Quantify TCO savings: usage-based pricing vs. per-host/per-container</li>
+          <li>Emphasize open standards (OTel) = no lock-in, even with Grafana</li>
+          <li>Highlight Adaptive Telemetry for 50-80% cost reduction on noisy data</li>
+          <li>Reference: Erste Digital, Blockchain company migrated from Datadog</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="play-card">
+    <div class="play-header">
+      <span class="play-badge" style="background: var(--blue-bg); border: 1px solid var(--blue-border); color: #1540e0;">Migrate</span>
+      <h3>OSS to Cloud — Upgrade Self-Managed Grafana</h3>
+    </div>
+    <div class="play-body">
+      <div class="play-section">
+        <h4>FSI Scenario</h4>
+        <ul>
+          <li>Bank runs 50+ self-hosted Grafana instances with Prometheus backends</li>
+          <li>SRE team spending 30-40% of time maintaining observability stack</li>
+          <li>Scaling issues, security patching burden, compliance gaps</li>
+          <li>No RBAC, audit logging, or enterprise features</li>
+        </ul>
+      </div>
+      <div class="play-section">
+        <h4>How to Win</h4>
+        <ul>
+          <li>Quantify engineering time & cost of self-hosting</li>
+          <li>Emphasize compliance: automatic upgrades, security patches, audit logging</li>
+          <li>MAS TRM compliance made easier with managed service + RBAC</li>
+          <li>Reference: Uni Cards — from OSS to Cloud, freed engineering time</li>
+          <li>BYOC option for accounts spending $5M+ who need data in their own cloud</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="play-card">
+    <div class="play-header">
+      <span class="play-badge" style="background: var(--green-bg); border: 1px solid var(--green-border); color: #0a5b39;">Select</span>
+      <h3>First Pane of Glass — Unified Frontend Land</h3>
+    </div>
+    <div class="play-body">
+      <div class="play-section">
+        <h4>FSI Scenario</h4>
+        <ul>
+          <li>FSI has fragmented tools: CloudWatch, Splunk for logs, New Relic for APM, Prometheus for infra</li>
+          <li>No unified view — teams context-switch between 4-5 tools during incidents</li>
+          <li>Large-scale cloud migration needs real-time visibility dashboard</li>
+          <li>New digital bank selecting observability platform for the first time</li>
+        </ul>
+      </div>
+      <div class="play-section">
+        <h4>How to Win</h4>
+        <ul>
+          <li>Position Grafana as the "single pane of glass" across all data sources</li>
+          <li>Low-risk entry: connect to existing tools first, then migrate backends</li>
+          <li>Educate first, differentiate second (especially for greenfield)</li>
+          <li>Use big tent data source integrations as the wedge</li>
+          <li>Reference: Erste Digital — consolidated 250+ instances into unified Cloud</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="play-card">
+    <div class="play-header">
+      <span class="play-badge" style="background: var(--purple-bg); border: 1px solid var(--purple-border); color: var(--purple);">Expand</span>
+      <h3>Extend into New Products & Teams</h3>
+    </div>
+    <div class="play-body">
+      <div class="play-section">
+        <h4>FSI Scenario</h4>
+        <ul>
+          <li>Existing Grafana customer using only Metrics, ready for Logs + Traces</li>
+          <li>One business unit live, opportunity to expand to core banking, wealth mgmt, insurance divisions</li>
+          <li>Replace PagerDuty/Opsgenie with Grafana IRM</li>
+          <li>Add Synthetics for proactive monitoring of customer-facing banking apps</li>
+        </ul>
+      </div>
+      <div class="play-section">
+        <h4>How to Win</h4>
+        <ul>
+          <li>Run whitespace analysis — identify unused product areas</li>
+          <li>Executive Business Review (EBR) to shift conversation to future goals</li>
+          <li>Position IRM: active-user pricing vs. PagerDuty's per-seat model</li>
+          <li>Synthetics for PayNow, FAST, digital banking uptime monitoring</li>
+          <li>App Observability + Knowledge Graph for distributed microservices</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DISCOVERY QUESTIONS -->
+<div class="section section-alt" id="discovery">
+  <span class="section-label"><i class="fas fa-comments"></i> Deep Discovery</span>
+  <h2>Discovery <span>Questions.</span></h2>
+  <p class="section-sub">Structured discovery flow for FSI Singapore accounts. Follow the Before Scenario → Negative Consequences → After Scenario → Positive Business Outcomes → Required Capabilities → Measurements sequence.</p>
+
+  <div class="card-grid grid-2">
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <h3 style="font-family:'Poppins',sans-serif;font-size:16px;font-weight:700;margin-bottom:6px;color:var(--content);"><i class="fas fa-door-open" style="color:var(--accent);margin-right:8px;"></i>Opening & Qualification</h3>
+
+      <div class="q-card">
+        <span class="q-stage" style="background:var(--accent-bg);border:1px solid var(--accent-border);color:#c72f07;">Opening</span>
+        <p>"Can you walk me through what observability looks like at [Bank] today — how many tools, how many teams use them, and who owns the strategy?"</p>
+        <div class="q-why">Surfaces tool sprawl and ownership — key ICP signals.</div>
+      </div>
+      <div class="q-card">
+        <span class="q-stage" style="background:var(--accent-bg);border:1px solid var(--accent-border);color:#c72f07;">Opening</span>
+        <p>"With MAS TRM guidelines requiring documented system resilience — how do you currently report on availability and incident response metrics?"</p>
+        <div class="q-why">Connects regulatory compliance to observability — creates urgency.</div>
+      </div>
+      <div class="q-card">
+        <span class="q-stage" style="background:var(--blue-bg);border:1px solid var(--blue-border);color:#1540e0;">Diagnostic</span>
+        <p>"Walk me through the last major production incident on your core banking platform. What steps were involved, who was pulled in, what tools were accessed, and how long did it take?"</p>
+        <div class="q-why">Reveals MTTR, tool fragmentation, and incident workflow pain.</div>
+      </div>
+      <div class="q-card">
+        <span class="q-stage" style="background:var(--blue-bg);border:1px solid var(--blue-border);color:#1540e0;">Diagnostic</span>
+        <p>"How do you effectively correlate metrics, logs, and traces across your different environments — on-prem, cloud, and hybrid?"</p>
+        <div class="q-why">Exposes data silos and the correlation gap Grafana solves.</div>
+      </div>
+      <div class="q-card">
+        <span class="q-stage" style="background:var(--blue-bg);border:1px solid var(--blue-border);color:#1540e0;">Diagnostic</span>
+        <p>"How do you decide which systems to monitor today? What percentage of your environment is covered? What issues has that caused?"</p>
+        <div class="q-why">Identifies coverage gaps — running blind = risk for regulated FSI.</div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <h3 style="font-family:'Poppins',sans-serif;font-size:16px;font-weight:700;margin-bottom:6px;color:var(--content);"><i class="fas fa-magnifying-glass-dollar" style="color:var(--accent);margin-right:8px;"></i>Pain & Value Discovery</h3>
+
+      <div class="q-card">
+        <span class="q-stage" style="background:var(--green-bg);border:1px solid var(--green-border);color:#0a5b39;">Pain</span>
+        <p>"Your observability costs are likely scaling with telemetry growth from your K8s and microservices migration. Are you seeing unpredictable billing spikes? How is that affecting your budget planning?"</p>
+        <div class="q-why">TCO pain — opens the door for usage-based pricing + Adaptive Telemetry.</div>
+      </div>
+      <div class="q-card">
+        <span class="q-stage" style="background:var(--green-bg);border:1px solid var(--green-border);color:#0a5b39;">Pain</span>
+        <p>"How concerned are you about vendor lock-in with [Datadog/Splunk]'s proprietary agents and query language? If you needed to switch, how painful would that be?"</p>
+        <div class="q-why">Lock-in anxiety — positions OTel and open standards as the de-risk path.</div>
+      </div>
+      <div class="q-card">
+        <span class="q-stage" style="background:var(--purple-bg);border:1px solid var(--purple-border);color:var(--purple);">Value</span>
+        <p>"If you could detect and resolve incidents before customers are impacted — what would that mean for your SLA performance and customer trust?"</p>
+        <div class="q-why">Connects to "Maximize Customer Retention" value driver.</div>
+      </div>
+      <div class="q-card">
+        <span class="q-stage" style="background:var(--purple-bg);border:1px solid var(--purple-border);color:var(--purple);">Value</span>
+        <p>"If your SREs could reclaim 30-40% of their time from maintaining the observability stack — what would they be working on instead?"</p>
+        <div class="q-why">Quantifies engineering productivity gain — "Accelerate Time to Market" driver.</div>
+      </div>
+      <div class="q-card">
+        <span class="q-stage" style="background:var(--yellow-bg);border:1px solid var(--yellow-border);color:var(--yellow);">Trap</span>
+        <p>"When the MAS auditor asks how you ensure consistent monitoring across all production systems — can your current tooling generate that report in one view?"</p>
+        <div class="q-why">Trap question — exposes compliance visibility gap. Grafana solves this with unified dashboards.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COMPETITION -->
+<div class="section" id="competition">
+  <span class="section-label"><i class="fas fa-swords"></i> Competitive Intelligence</span>
+  <h2>Know Your <span>Competition.</span></h2>
+  <p class="section-sub">Primary competitors in Singapore FSI accounts. For each, know their weaknesses and how to counter-position Grafana.</p>
+
+  <div class="comp-card">
+    <div class="comp-header">
+      <div class="card-icon icon-red" style="margin-bottom:0;"><i class="fas fa-dog"></i></div>
+      <h3>Datadog</h3>
+      <span class="comp-tag" style="background:var(--red-bg);border:1px solid var(--red-border);color:var(--red);">Most Common Incumbent</span>
+    </div>
+    <div class="comp-body">
+      <div class="comp-grid">
+        <div class="comp-col weakness">
+          <h4><i class="fas fa-circle-minus"></i> Their Weaknesses</h4>
+          <ul>
+            <li><strong>Cost at scale:</strong> Per-host pricing explodes with K8s/microservices growth</li>
+            <li><strong>Vendor lock-in:</strong> Proprietary agent, DD-native query language, no OTel-first</li>
+            <li><strong>Unpredictable billing:</strong> SKU complexity, container surcharges, overage fees</li>
+            <li><strong>Data retention costs:</strong> Long-term log retention extremely expensive</li>
+            <li><strong>Limited customization:</strong> "Walled garden" — less composable than Grafana</li>
+          </ul>
+        </div>
+        <div class="comp-col counter">
+          <h4><i class="fas fa-circle-plus"></i> Our Counter-Positioning</h4>
+          <ul>
+            <li><strong>Usage-based pricing:</strong> Pay for what you use, not per host/container</li>
+            <li><strong>Open standards:</strong> OTel-native, no proprietary agents — switch cost = zero</li>
+            <li><strong>Adaptive Telemetry:</strong> Reduce noisy data by up to 80% while keeping fidelity</li>
+            <li><strong>Big Tent:</strong> Grafana connects to Datadog as a data source during phased migration</li>
+            <li><strong>Proof:</strong> Financial infra company saved significantly migrating from DD to Grafana Cloud</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="comp-card">
+    <div class="comp-header">
+      <div class="card-icon icon-purple" style="margin-bottom:0;"><i class="fas fa-magnifying-glass"></i></div>
+      <h3>Splunk</h3>
+      <span class="comp-tag" style="background:var(--purple-bg);border:1px solid var(--purple-border);color:var(--purple);">Log Analytics Incumbent</span>
+    </div>
+    <div class="comp-body">
+      <div class="comp-grid">
+        <div class="comp-col weakness">
+          <h4><i class="fas fa-circle-minus"></i> Their Weaknesses</h4>
+          <ul>
+            <li><strong>Extremely expensive logs:</strong> GB-based pricing makes full-fidelity retention prohibitive</li>
+            <li><strong>Siloed from metrics/traces:</strong> Bolt-on APM, not unified observability</li>
+            <li><strong>Complex licensing:</strong> Workload pricing adds confusion</li>
+            <li><strong>Heavy on-prem footprint:</strong> Many SG banks still running on-prem Splunk</li>
+            <li><strong>Cisco acquisition uncertainty:</strong> Product direction questions post-acquisition</li>
+          </ul>
+        </div>
+        <div class="comp-col counter">
+          <h4><i class="fas fa-circle-plus"></i> Our Counter-Positioning</h4>
+          <ul>
+            <li><strong>Loki:</strong> $0.50/GB logs with built-in retention — fraction of Splunk cost</li>
+            <li><strong>Unified LGTM stack:</strong> Metrics, logs, traces, profiles correlated natively</li>
+            <li><strong>Grafana as first pane:</strong> Connect to Splunk as data source during migration</li>
+            <li><strong>Open future:</strong> No acquisition risk — independent, VC-backed, $6B+ valuation</li>
+            <li><strong>Adaptive Logs:</strong> Auto-reduce volume while preserving query capability</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="comp-card">
+    <div class="comp-header">
+      <div class="card-icon icon-blue" style="margin-bottom:0;"><i class="fas fa-robot"></i></div>
+      <h3>Dynatrace</h3>
+      <span class="comp-tag" style="background:var(--blue-bg);border:1px solid var(--blue-border);color:#1540e0;">Enterprise APM</span>
+    </div>
+    <div class="comp-body">
+      <div class="comp-grid">
+        <div class="comp-col weakness">
+          <h4><i class="fas fa-circle-minus"></i> Their Weaknesses</h4>
+          <ul>
+            <li><strong>Per-host pricing:</strong> Expensive at scale — 8GB host units add up fast</li>
+            <li><strong>Proprietary OneAgent:</strong> Deep lock-in — removal is painful and risky</li>
+            <li><strong>Opaque AI:</strong> "Davis AI" = black box — regulated FSI needs transparency</li>
+            <li><strong>Weak community:</strong> Small ecosystem vs. Grafana's 25M+ user community</li>
+            <li><strong>Limited composability:</strong> Tightly coupled stack, poor multi-tool integration</li>
+          </ul>
+        </div>
+        <div class="comp-col counter">
+          <h4><i class="fas fa-circle-plus"></i> Our Counter-Positioning</h4>
+          <ul>
+            <li><strong>Transparent AI:</strong> Grafana Assistant shows its logic and data sources — auditable</li>
+            <li><strong>Open instrumentation:</strong> OTel SDKs replace proprietary agents</li>
+            <li><strong>Knowledge Graph:</strong> Automated topology discovery without proprietary agents</li>
+            <li><strong>Community-driven:</strong> 25M+ users, 1M+ dashboards — proven at scale</li>
+            <li><strong>Cost-effective APM:</strong> App Observability + Profiles at fraction of DT cost</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="comp-card">
+    <div class="comp-header">
+      <div class="card-icon icon-green" style="margin-bottom:0;"><i class="fas fa-chart-line"></i></div>
+      <h3>New Relic</h3>
+      <span class="comp-tag" style="background:var(--green-bg);border:1px solid var(--green-border);color:#0a5b39;">Mid-Market APM</span>
+    </div>
+    <div class="comp-body">
+      <div class="comp-grid">
+        <div class="comp-col weakness">
+          <h4><i class="fas fa-circle-minus"></i> Their Weaknesses</h4>
+          <ul>
+            <li><strong>Per-user pricing:</strong> Full-platform user pricing limits observability democratization</li>
+            <li><strong>Data ingest caps:</strong> Free tier limits create "data diets" — running blind</li>
+            <li><strong>Reliability concerns:</strong> Public outages eroded trust in 2023-2024</li>
+            <li><strong>Weaker in infrastructure:</strong> Historically APM-focused, infra monitoring is secondary</li>
+            <li><strong>Financial stability:</strong> Ongoing profitability questions vs. Grafana's growth trajectory</li>
+          </ul>
+        </div>
+        <div class="comp-col counter">
+          <h4><i class="fas fa-circle-plus"></i> Our Counter-Positioning</h4>
+          <ul>
+            <li><strong>Unlimited users:</strong> Grafana Cloud viewers are free — democratize observability</li>
+            <li><strong>No data diets:</strong> Usage-based pricing means you send what you need</li>
+            <li><strong>Full-stack native:</strong> Metrics, logs, traces, profiles, k8s, synthetics — all built together</li>
+            <li><strong>Proven reliability:</strong> 7 of top 10 Fortune 10 companies trust Grafana</li>
+            <li><strong>Flexible Spend Commit:</strong> Pre-loaded funds across any product, no expiry</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- POSITIONING -->
+<div class="section section-alt" id="positioning">
+  <span class="section-label"><i class="fas fa-diamond"></i> Positioning</span>
+  <h2>Why Grafana Wins <span>in FSI.</span></h2>
+  <p class="section-sub">Four positioning pillars tailored for Singapore Financial Services accounts.</p>
+
+  <div class="card-grid grid-2">
+    <div class="card">
+      <div class="card-icon icon-orange"><i class="fas fa-unlock"></i></div>
+      <h3>Open Standards = Regulatory Confidence</h3>
+      <p>MAS encourages technology resilience and avoiding concentration risk. Grafana's OpenTelemetry-native approach means FSIs are never locked into a single vendor. Data portability and open standards align with MAS TRM guidelines on vendor risk management.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon icon-blue"><i class="fas fa-coins"></i></div>
+      <h3>Predictable Cost at Scale</h3>
+      <p>FSI telemetry volumes are massive — core banking, payments, trading systems generate billions of data points. Usage-based pricing with Flexible Spend Commit gives CFOs budget predictability. Adaptive Telemetry reduces noise by up to 80% without losing signal.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon icon-green"><i class="fas fa-shield-halved"></i></div>
+      <h3>Compliance-Ready Architecture</h3>
+      <p>RBAC, audit logging, SSO/SAML, and data retention controls satisfy MAS requirements. Grafana Enterprise supports on-prem/hybrid for data sovereignty. BYOC option keeps data in customer's own cloud account for accounts with strict data residency needs.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon icon-purple"><i class="fas fa-bolt"></i></div>
+      <h3>AI-Powered Incident Response</h3>
+      <p>Grafana Assistant reduces MTTR by up to 60% with transparent, auditable AI. Unlike "black box" competitors, Assistant shows its logic and data sources — critical for regulated FSI environments. Knowledge Graph auto-maps service dependencies without proprietary agents.</p>
+    </div>
+  </div>
+
+  <div style="margin-top: 32px;">
+    <div class="card" style="border-left: 3px solid var(--accent); padding: 28px;">
+      <h3 style="font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 12px; color: var(--content);"><i class="fas fa-quote-left" style="color: var(--accent); margin-right: 8px;"></i> The FSI Elevator Pitch</h3>
+      <p style="font-size: 15px; color: var(--content); line-height: 1.6;">"Singapore's financial institutions run mission-critical systems where every second of downtime impacts revenue and customer trust. Grafana gives your teams a unified, open platform to detect, diagnose, and resolve incidents before customers are affected — at a fraction of the cost of legacy vendors. Built on OpenTelemetry and open standards, we eliminate vendor lock-in while meeting MAS compliance requirements. 7 of the Fortune 10 trust Grafana. Leading banks and fintech companies are already making the switch."</p>
+    </div>
+  </div>
+</div>
+
+<!-- CUSTOMER REFERENCES -->
+<div class="section" id="references">
+  <span class="section-label"><i class="fas fa-trophy"></i> Customer References</span>
+  <h2>FSI Proof <span>Points.</span></h2>
+  <p class="section-sub">Published customer stories in financial services. Use these as social proof in prospecting and discovery conversations.</p>
+
+  <div class="ref-card">
+    <div class="ref-icon icon-orange"><i class="fas fa-building-columns"></i></div>
+    <div class="ref-body">
+      <div class="ref-industry">Financial Services · Banking</div>
+      <h3>Erste Digital (Erste Group)</h3>
+      <p>Technology arm of one of the largest banking groups in Central & Eastern Europe. Operating in a highly regulated environment with legacy systems, on-prem, and multi-cloud.</p>
+      <div class="ref-quote">"We wanted to have a vendor neutral instrumentation and therefore we chose Grafana Cloud." — Markus Langer, Senior Technology Specialist</div>
+      <p><strong>Challenge:</strong> 250+ siloed Grafana OSS instances, fragmented tools, slow incident response, strict compliance requirements.<br>
+      <strong>Solution:</strong> Consolidated onto Grafana Cloud with OpenTelemetry. Standardized instrumentation, deployed Grafana Alloy, unified metrics/logs/traces.<br>
+      <strong>Impact:</strong> Eliminated tool sprawl, democratized observability across hundreds of teams, vendor-neutral compliance posture.</p>
+      <a href="https://grafana.com/success/erste-digital/" class="ref-link"><i class="fas fa-arrow-right"></i> Read full story</a>
+    </div>
+  </div>
+
+  <div class="ref-card">
+    <div class="ref-icon icon-blue"><i class="fas fa-credit-card"></i></div>
+    <div class="ref-body">
+      <div class="ref-industry">Financial Services · Digital Banking</div>
+      <h3>Leading Digital Banking Platform</h3>
+      <p>Serves hundreds of financial institutions across the U.S. with mission-critical digital banking services requiring 24/7 uptime.</p>
+      <div class="ref-quote">"Grafana Assistant responds like an engineer rather than a generic AI bot."</div>
+      <p><strong>Challenge:</strong> Complex hybrid environment with legacy and modern services. Newer engineers struggled to troubleshoot. Pushing for stronger DevOps ownership.<br>
+      <strong>Solution:</strong> Migrated to Grafana Cloud + Grafana Assistant + Assistant Investigations.<br>
+      <strong>Impact:</strong> ~60% MTTR reduction, expanded observability access across all engineering roles, accelerated DevOps culture shift.</p>
+      <div class="ref-results">
+        <div class="ref-stat"><div class="val" style="color:var(--accent);">~60%</div><div class="lbl">MTTR reduction</div></div>
+        <div class="ref-stat"><div class="val" style="color:var(--blue);">5 teams</div><div class="lbl">using Assistant</div></div>
+        <div class="ref-stat"><div class="val" style="color:#0a5b39;">24/7 NOC</div><div class="lbl">empowered with AI</div></div>
+      </div>
+      <a href="https://grafana.com/success/leading-digital-banking-platform-reduces-mttr-grafana-assistant-investigations/" class="ref-link"><i class="fas fa-arrow-right"></i> Read full story</a>
+    </div>
+  </div>
+
+  <div class="ref-card">
+    <div class="ref-icon icon-green"><i class="fas fa-wallet"></i></div>
+    <div class="ref-body">
+      <div class="ref-industry">Financial Services · Fintech / Cards</div>
+      <h3>Uni Cards</h3>
+      <p>Financial services company that migrated from self-hosted Grafana OSS to Grafana Cloud — directly relevant for SG FSI accounts with existing OSS footprints.</p>
+      <div class="ref-quote">"In the finance domain, audits are frequent and every tool must be up to date and compliant. Now, Grafana Cloud handles it."</div>
+      <p><strong>Challenge:</strong> Small team maintaining OSS stack. Compliance burden from manual upgrades and security patching. Limited alerting and scaling.<br>
+      <strong>Solution:</strong> Migrated to Grafana Cloud. Leveraged K8s dashboards, Adaptive Metrics for cost optimization, automated alerting.<br>
+      <strong>Impact:</strong> Freed engineering time, automatic compliance (upgrades/patches), cost-optimized observability, full alerting coverage.</p>
+      <a href="https://grafana.com/success/uni-cards/" class="ref-link"><i class="fas fa-arrow-right"></i> Read full story</a>
+    </div>
+  </div>
+
+  <div class="ref-card">
+    <div class="ref-icon icon-purple"><i class="fas fa-link"></i></div>
+    <div class="ref-body">
+      <div class="ref-industry">Financial Services · Blockchain / Financial Infrastructure</div>
+      <h3>Leading Financial Infrastructure & Blockchain Company</h3>
+      <p>Migrated from Datadog, Sumo Logic, and Sentry to Grafana Cloud for centralized, cost-effective observability.</p>
+      <div class="ref-quote">"One of the things we were trying to do as an organization was to get everybody working the same way and on the same tooling."</div>
+      <p><strong>Challenge:</strong> Multiple observability tools, teams doing their own thing, inconsistent practices, high costs.<br>
+      <strong>Solution:</strong> Consolidated all monitoring on Grafana Cloud — eliminated Datadog, Sumo Logic, and Sentry.<br>
+      <strong>Impact:</strong> Cost control achieved, streamlined troubleshooting, empowered platform engineering team with single platform.</p>
+      <a href="https://grafana.com/success/blockchain-from-datadog-to-grafana-cloud/" class="ref-link"><i class="fas fa-arrow-right"></i> Read full story</a>
+    </div>
+  </div>
+
+  <div style="margin-top: 24px;">
+    <div class="card" style="border: 1px solid var(--yellow-border); background: var(--yellow-light);">
+      <h3 style="font-size: 14px; font-weight: 700; color: var(--yellow); margin-bottom: 8px;"><i class="fas fa-star" style="margin-right: 6px;"></i> Additional Named Proof Points for FSI Conversations</h3>
+      <p style="font-size: 13px; color: var(--muted); line-height: 1.7;">
+        <strong style="color:var(--content)">Maximize Retention:</strong> Genesys (5 nines, NPS +50%, MTTR -40%) · Roblox (100% availability, 17K+ dashboards) · LATAM Airlines (87% MTTD reduction)<br>
+        <strong style="color:var(--content)">Lower TCO:</strong> The Trade Desk (~$1.74M annual savings) · Delivery Hero (observability spend 15-25% → 6% of cloud) · Forcepoint ($5M+ annual savings) · Pegasystems ($2.05M/yr saved)<br>
+        <strong style="color:var(--content)">De-risk Ops:</strong> Atlassian ("Grafana smooths transitions") · ComplyAdvantage (OTel compatibility) · Palantir (regulated environment)<br>
+        <strong style="color:var(--content)">Accelerate TTM:</strong> Uber (10K core reduction, memory leak in 30 min vs. days) · SailPoint (50% active series reduction)
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- VALUE FRAMEWORK -->
+<div class="section section-alt" id="value">
+  <span class="section-label"><i class="fas fa-compass"></i> Value Framework</span>
+  <h2>Value Drivers for <span>FSI.</span></h2>
+  <p class="section-sub">Use these four value drivers to structure executive conversations. Lead with the driver most relevant to the persona and trigger event.</p>
+
+  <div class="card-grid grid-2">
+    <div class="value-card" style="border-left: 3px solid var(--accent);">
+      <span class="card-label" style="color: var(--accent);"><i class="fas fa-heart-pulse"></i> Value Driver 1</span>
+      <h3>Maximize Customer Retention</h3>
+      <div class="before"><i class="fas fa-arrow-down"></i> Before: Customers detect outages before IT. SLA breaches. Revenue loss from failed transactions.</div>
+      <div class="after"><i class="fas fa-arrow-up"></i> After: Proactive detection. Issues resolved before customer impact. SLAs consistently met.</div>
+      <p style="font-size: 13px; color: var(--muted); margin-top: 8px;">FSI framing: "Every minute of downtime on your PayNow integration or mobile banking app erodes customer trust and triggers MAS reporting. With Grafana, you detect issues before your customers do."</p>
+      <div class="metrics-row" style="margin-top: 12px;">
+        <span class="metric-tag">MTTR</span>
+        <span class="metric-tag">CSAT / NPS</span>
+        <span class="metric-tag">SLA penalties</span>
+        <span class="metric-tag">Customer incidents</span>
+      </div>
+    </div>
+
+    <div class="value-card" style="border-left: 3px solid var(--blue);">
+      <span class="card-label" style="color: var(--blue);"><i class="fas fa-piggy-bank"></i> Value Driver 2</span>
+      <h3>Lower Total Cost of Ownership</h3>
+      <div class="before"><i class="fas fa-arrow-down"></i> Before: Telemetry costs scaling with cloud migration. Unpredictable billing. Tool sprawl across teams.</div>
+      <div class="after"><i class="fas fa-arrow-up"></i> After: Predictable costs. Consolidated tooling. Engineering time freed for innovation.</div>
+      <p style="font-size: 13px; color: var(--muted); margin-top: 8px;">FSI framing: "Your K8s migration is 3x-ing telemetry volume. At Datadog's per-host pricing, that's an uncontrollable budget line. With Grafana, you pay for what you use — and Adaptive Telemetry cuts noise by 80%."</p>
+      <div class="metrics-row" style="margin-top: 12px;">
+        <span class="metric-tag">Vendor cost</span>
+        <span class="metric-tag"># tools</span>
+        <span class="metric-tag">FTEs managing o11y</span>
+        <span class="metric-tag">Per-unit cost</span>
+      </div>
+    </div>
+
+    <div class="value-card" style="border-left: 3px solid #0a5b39;">
+      <span class="card-label" style="color: #0a5b39;"><i class="fas fa-shield-halved"></i> Value Driver 3</span>
+      <h3>De-risk Business Operations</h3>
+      <div class="before"><i class="fas fa-arrow-down"></i> Before: Locked into proprietary vendor. No data portability. MAS audit gaps. Concentration risk.</div>
+      <div class="after"><i class="fas fa-arrow-up"></i> After: Open standards. Vendor-neutral instrumentation. Full audit trail. Compliance confidence.</div>
+      <p style="font-size: 13px; color: var(--muted); margin-top: 8px;">FSI framing: "MAS TRM guidelines explicitly address vendor concentration risk. With Grafana's OpenTelemetry-native approach, your instrumentation is portable — you're never locked in, even to us."</p>
+      <div class="metrics-row" style="margin-top: 12px;">
+        <span class="metric-tag">Vendor lock-in risk</span>
+        <span class="metric-tag">Compliance gaps</span>
+        <span class="metric-tag">Audit readiness</span>
+        <span class="metric-tag">Data portability</span>
+      </div>
+    </div>
+
+    <div class="value-card" style="border-left: 3px solid var(--purple);">
+      <span class="card-label" style="color: var(--purple);"><i class="fas fa-rocket"></i> Value Driver 4</span>
+      <h3>Accelerate Time to Market</h3>
+      <div class="before"><i class="fas fa-arrow-down"></i> Before: Engineers spend 30%+ time on o11y maintenance. Slow onboarding. Expert bottlenecks.</div>
+      <div class="after"><i class="fas fa-arrow-up"></i> After: Self-serve observability. Fast onboarding. AI-assisted queries. Engineers ship features.</div>
+      <p style="font-size: 13px; color: var(--muted); margin-top: 8px;">FSI framing: "Your digital banking roadmap is competing with maintenance overhead. Grafana Assistant cuts onboarding time in half and lets any engineer run investigations — not just your 3 senior SREs."</p>
+      <div class="metrics-row" style="margin-top: 12px;">
+        <span class="metric-tag">Feature velocity</span>
+        <span class="metric-tag">Onboarding time</span>
+        <span class="metric-tag">Change failure rate</span>
+        <span class="metric-tag">Dev productivity</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 32px;">
+    <div class="card" style="background: var(--bg2);">
+      <h3 style="font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 14px; color: var(--content);"><i class="fas fa-wand-magic-sparkles" style="color: var(--accent); margin-right: 8px;"></i> The Mantra — Closing Discovery</h3>
+      <p style="font-size: 14px; color: var(--muted); line-height: 1.7;">
+        <em>"What I hear you saying is that the <strong style="color:var(--content)">Positive Business Outcomes</strong> you're trying to achieve are…</em><br>
+        <em>In order to achieve this, we agreed that these are the <strong style="color:var(--content)">Required Capabilities</strong> you're going to need…</em><br>
+        <em>And you'll want to <strong style="color:var(--content)">Measure</strong> these capabilities by…</em><br>
+        <em>Let me tell you <strong style="color:var(--content)">How We Do It</strong>, and how that is <strong style="color:var(--content)">Better/Different</strong>…</em><br>
+        <em>Don't take our word for it — <strong style="color:var(--content)">[Reference Erste Digital / Leading Digital Banking Platform / Uni Cards]</strong>."</em>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- OUTREACH EMAIL CAMPAIGN -->
+<div class="section" id="outreach">
+  <span class="section-label"><i class="fas fa-envelope-open-text"></i> Outreach Campaign</span>
+  <h2>FSI Singapore <span>Email Sequence.</span></h2>
+  <p class="section-sub">A 5-touch outreach campaign designed for FSI Singapore prospects. Three persona-targeted tracks — User (SRE/DevOps), Operator (Platform Eng Manager), and Executive Buyer (CTO/VP Eng). Customize the bracketed fields before sending.</p>
+
+  <!-- SEQUENCE TIMELINE -->
+  <div class="sequence-timeline">
+    <div class="seq-step">
+      <div class="seq-dot" style="background:var(--accent-bg);border:1px solid var(--accent-border);color:#c72f07;">1</div>
+      <div class="seq-label">Day 1</div>
+      <div class="seq-desc">Cold Open<br>Problem-Led</div>
+    </div>
+    <div class="seq-step">
+      <div class="seq-dot" style="background:var(--blue-bg);border:1px solid var(--blue-border);color:#1540e0;">2</div>
+      <div class="seq-label">Day 3</div>
+      <div class="seq-desc">Value Add<br>Case Study</div>
+    </div>
+    <div class="seq-step">
+      <div class="seq-dot" style="background:var(--green-bg);border:1px solid var(--green-border);color:#0a5b39;">3</div>
+      <div class="seq-label">Day 7</div>
+      <div class="seq-desc">Social Proof<br>FSI Reference</div>
+    </div>
+    <div class="seq-step">
+      <div class="seq-dot" style="background:var(--purple-bg);border:1px solid var(--purple-border);color:var(--purple);">4</div>
+      <div class="seq-label">Day 14</div>
+      <div class="seq-desc">Trigger Event<br>Urgency</div>
+    </div>
+    <div class="seq-step">
+      <div class="seq-dot" style="background:var(--yellow-bg);border:1px solid var(--yellow-border);color:var(--yellow);">5</div>
+      <div class="seq-label">Day 21</div>
+      <div class="seq-desc">Breakup<br>Final CTA</div>
+    </div>
+  </div>
+
+  <!-- EMAIL 1 -->
+  <div class="email-card">
+    <div class="email-header">
+      <span class="email-badge" style="background:var(--accent-bg);border:1px solid var(--accent-border);color:#c72f07;">Email 1</span>
+      <h3>The Cold Open — Problem-Led</h3>
+      <span class="email-timing"><i class="fas fa-clock" style="margin-right:4px;"></i> Day 1</span>
+    </div>
+    <div class="email-meta">
+      <div class="email-meta-item">
+        <div class="email-meta-label">Target Persona</div>
+        <div class="email-meta-value">Operator (Head of Observability / Platform Eng Manager)</div>
+      </div>
+      <div class="email-meta-item">
+        <div class="email-meta-label">Subject Line</div>
+        <div class="email-meta-value">[Company]'s observability costs after your K8s migration</div>
+      </div>
+      <div class="email-meta-item">
+        <div class="email-meta-label">Objective</div>
+        <div class="email-meta-value">Surface cost/complexity pain, earn a reply</div>
+      </div>
+    </div>
+    <div class="email-body">
+      <div class="email-content">Hi [First Name],
+
+I've been talking to a lot of platform engineering leaders at Singapore banks and fintechs recently, and one pattern keeps coming up:
+
+<strong>Observability costs are scaling faster than the infrastructure they're monitoring.</strong>
+
+As [Company] moves deeper into Kubernetes and microservices, your telemetry volume is probably 3-5x what it was two years ago. With per-host or per-container pricing, that's a budget conversation nobody wants to have with the CFO.
+
+We're working with several financial services companies that have cut observability costs by 40-60% while actually improving coverage — using usage-based pricing and adaptive telemetry that automatically reduces noise without losing signal.
+
+Would a 20-minute call be useful to see if the patterns we're seeing match what you're experiencing at [Company]?
+
+Tyler</div>
+    </div>
+    <div class="email-notes">
+      <i class="fas fa-lightbulb"></i>
+      <span><strong>Customization tips:</strong> Research their tech blog or LinkedIn for K8s/cloud migration signals. If they've posted about infrastructure scaling, reference it specifically. Check job postings for "platform engineer" or "SRE" roles as signals they're investing here.</span>
+    </div>
+  </div>
+
+  <!-- EMAIL 2 -->
+  <div class="email-card">
+    <div class="email-header">
+      <span class="email-badge" style="background:var(--blue-bg);border:1px solid var(--blue-border);color:#1540e0;">Email 2</span>
+      <h3>The Value Add — Case Study Drop</h3>
+      <span class="email-timing"><i class="fas fa-clock" style="margin-right:4px;"></i> Day 3</span>
+    </div>
+    <div class="email-meta">
+      <div class="email-meta-item">
+        <div class="email-meta-label">Target Persona</div>
+        <div class="email-meta-value">Operator or User (SRE Manager / Staff Platform Engineer)</div>
+      </div>
+      <div class="email-meta-item">
+        <div class="email-meta-label">Subject Line</div>
+        <div class="email-meta-value">How a bank consolidated 250+ monitoring instances into one platform</div>
+      </div>
+      <div class="email-meta-item">
+        <div class="email-meta-label">Objective</div>
+        <div class="email-meta-value">Provide proof, build credibility</div>
+      </div>
+    </div>
+    <div class="email-body">
+      <div class="email-content">Hi [First Name],
+
+Quick follow-up — thought this might be relevant.
+
+Erste Group (one of the largest banking groups in Central Europe) had a problem you might recognise: <strong>250+ siloed Grafana instances across hundreds of teams</strong>, fragmented tools, and no unified view during incidents.
+
+Their team consolidated everything onto Grafana Cloud with OpenTelemetry — vendor-neutral instrumentation, unified metrics/logs/traces, and full compliance posture for their regulators.
+
+Their Senior Technology Specialist put it simply: <em>"We wanted vendor-neutral instrumentation, and therefore we chose Grafana Cloud."</em>
+
+I attached the case study here: <strong>grafana.com/success/erste-digital/</strong>
+
+If tool consolidation or compliance visibility is on your radar at [Company], happy to share how their architecture maps to SG FSI requirements.
+
+Tyler</div>
+    </div>
+    <div class="email-notes">
+      <i class="fas fa-lightbulb"></i>
+      <span><strong>Customization tips:</strong> Swap the reference based on fit — use Uni Cards for OSS-to-Cloud migration scenarios, or the Digital Banking Platform story if they're a digital-first bank. Lead with the reference closest to their situation.</span>
+    </div>
+  </div>
+
+  <!-- EMAIL 3 -->
+  <div class="email-card">
+    <div class="email-header">
+      <span class="email-badge" style="background:var(--green-bg);border:1px solid var(--green-border);color:#0a5b39;">Email 3</span>
+      <h3>The Social Proof — FSI-Specific</h3>
+      <span class="email-timing"><i class="fas fa-clock" style="margin-right:4px;"></i> Day 7</span>
+    </div>
+    <div class="email-meta">
+      <div class="email-meta-item">
+        <div class="email-meta-label">Target Persona</div>
+        <div class="email-meta-value">Executive Buyer (CTO / VP Engineering / Head of Technology)</div>
+      </div>
+      <div class="email-meta-item">
+        <div class="email-meta-label">Subject Line</div>
+        <div class="email-meta-value">7 of the Fortune 10 chose this approach to observability</div>
+      </div>
+      <div class="email-meta-item">
+        <div class="email-meta-label">Objective</div>
+        <div class="email-meta-value">Executive-level credibility, open a strategic conversation</div>
+      </div>
+    </div>
+    <div class="email-body">
+      <div class="email-content">Hi [First Name],
+
+Three quick data points for you:
+
+<strong>1.</strong> A leading digital banking platform reduced MTTR by ~60% using Grafana's AI-powered investigations — their NOC now resolves incidents before customers notice.
+
+<strong>2.</strong> A financial infrastructure company eliminated Datadog, Sumo Logic, and Sentry — consolidating onto one open platform and reclaiming budget for engineering.
+
+<strong>3.</strong> 7 of the top 10 Fortune companies run Grafana. 25 million+ users globally. Over 1 million dashboards.
+
+The common thread: <strong>open standards eliminate vendor lock-in, usage-based pricing makes costs predictable, and unified observability accelerates MTTR</strong> — three things MAS TRM guidelines increasingly push Singapore FSIs toward.
+
+I'd like to share a 15-minute perspective on how FSI teams in the region are approaching this. Would that be valuable?
+
+Tyler</div>
+    </div>
+    <div class="email-notes">
+      <i class="fas fa-lightbulb"></i>
+      <span><strong>Customization tips:</strong> This email works best for CTO/VP-level contacts. Keep it outcome-focused — never features. If they're publicly dealing with a compliance initiative or digital transformation, reference it in the opening line.</span>
+    </div>
+  </div>
+
+  <!-- EMAIL 4 -->
+  <div class="email-card">
+    <div class="email-header">
+      <span class="email-badge" style="background:var(--purple-bg);border:1px solid var(--purple-border);color:var(--purple);">Email 4</span>
+      <h3>The Trigger — MAS Compliance Angle</h3>
+      <span class="email-timing"><i class="fas fa-clock" style="margin-right:4px;"></i> Day 14</span>
+    </div>
+    <div class="email-meta">
+      <div class="email-meta-item">
+        <div class="email-meta-label">Target Persona</div>
+        <div class="email-meta-value">Operator or Executive Buyer</div>
+      </div>
+      <div class="email-meta-item">
+        <div class="email-meta-label">Subject Line</div>
+        <div class="email-meta-value">Quick question about [Company]'s MAS TRM audit readiness</div>
+      </div>
+      <div class="email-meta-item">
+        <div class="email-meta-label">Objective</div>
+        <div class="email-meta-value">Create urgency via regulatory compliance angle</div>
+      </div>
+    </div>
+    <div class="email-body">
+      <div class="email-content">Hi [First Name],
+
+One question that keeps coming up when I speak with FSI teams in Singapore:
+
+<strong>"When MAS asks how we ensure consistent monitoring across all production systems — can we show that in a single view?"</strong>
+
+Most can't. They have CloudWatch for AWS, Splunk for logs, maybe Prometheus for infra, and Datadog or New Relic for APM. Four tools, four logins, four teams with different practices. During an audit, that fragmentation becomes a liability.
+
+Grafana connects to all of these as data sources — giving you a single pane of glass across your entire environment without ripping and replacing anything on day one. RBAC, audit logging, SSO/SAML, and data retention controls come built in.
+
+It's a low-risk starting point: connect first, consolidate later, and improve your compliance posture immediately.
+
+Worth a quick conversation?
+
+Tyler</div>
+    </div>
+    <div class="email-notes">
+      <i class="fas fa-lightbulb"></i>
+      <span><strong>Customization tips:</strong> Research if the company has had any public compliance events or technology disruptions. Time this email near MAS audit cycles if you can find the timing. The "single pane of glass" / "connect first" message is low-risk and opens the door for the Select play.</span>
+    </div>
+  </div>
+
+  <!-- EMAIL 5 -->
+  <div class="email-card">
+    <div class="email-header">
+      <span class="email-badge" style="background:var(--yellow-bg);border:1px solid var(--yellow-border);color:var(--yellow);">Email 5</span>
+      <h3>The Breakup — Respectful Close</h3>
+      <span class="email-timing"><i class="fas fa-clock" style="margin-right:4px;"></i> Day 21</span>
+    </div>
+    <div class="email-meta">
+      <div class="email-meta-item">
+        <div class="email-meta-label">Target Persona</div>
+        <div class="email-meta-value">Same as Email 1 (primary contact)</div>
+      </div>
+      <div class="email-meta-item">
+        <div class="email-meta-label">Subject Line</div>
+        <div class="email-meta-value">Closing the loop on observability at [Company]</div>
+      </div>
+      <div class="email-meta-item">
+        <div class="email-meta-label">Objective</div>
+        <div class="email-meta-value">Get a definitive response — yes, no, or later</div>
+      </div>
+    </div>
+    <div class="email-body">
+      <div class="email-content">Hi [First Name],
+
+I've reached out a few times and want to respect your inbox.
+
+If observability cost, tool consolidation, or MAS compliance visibility isn't a priority at [Company] right now — completely understood. I'll close this out.
+
+But if the timing just hasn't been right, I'm happy to:
+
+<strong>A)</strong> Schedule a 15-min call when it makes sense — even next quarter
+<strong>B)</strong> Send over a quick architecture comparison relevant to your stack
+<strong>C)</strong> Connect you with an FSI peer who's been through this journey
+
+Just reply with A, B, or C — or "not now" and I'll follow up in 6 months.
+
+Either way, I appreciate your time.
+
+Tyler</div>
+    </div>
+    <div class="email-notes">
+      <i class="fas fa-lightbulb"></i>
+      <span><strong>Why this works:</strong> The A/B/C format makes it easy to reply. "Breakup" emails typically have the highest reply rates. The 6-month follow-up option keeps the door open without being pushy. Always honour a "not now" response.</span>
+    </div>
+  </div>
+
+  <!-- BONUS: LINKEDIN TOUCHPOINTS -->
+  <div style="margin-top: 24px;">
+    <div class="card" style="border-left: 3px solid var(--blue);">
+      <h3 style="font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 14px; color: var(--content);"><i class="fab fa-linkedin" style="color: var(--blue); margin-right: 8px;"></i> LinkedIn Multi-Touch Cadence</h3>
+      <p style="font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 12px;">Layer these LinkedIn touches between emails for a multi-channel approach:</p>
+      <ul style="list-style:none;padding:0;">
+        <li style="font-size:13px;color:var(--muted);padding:6px 0;padding-left:18px;position:relative;line-height:1.45;"><span style="position:absolute;left:0;color:var(--blue);font-weight:700;">›</span> <strong style="color:var(--content)">Day 0 (before Email 1):</strong> Connect request with a note — "I focus on helping SG FSI teams with observability strategy. Would love to connect."</li>
+        <li style="font-size:13px;color:var(--muted);padding:6px 0;padding-left:18px;position:relative;line-height:1.45;"><span style="position:absolute;left:0;color:var(--blue);font-weight:700;">›</span> <strong style="color:var(--content)">Day 5 (between Email 2 & 3):</strong> Engage with their content — like/comment on a post. No pitch.</li>
+        <li style="font-size:13px;color:var(--muted);padding:6px 0;padding-left:18px;position:relative;line-height:1.45;"><span style="position:absolute;left:0;color:var(--blue);font-weight:700;">›</span> <strong style="color:var(--content)">Day 10 (between Email 3 & 4):</strong> Share a relevant Grafana blog post or GrafanaCON talk about FSI observability and tag/DM them.</li>
+        <li style="font-size:13px;color:var(--muted);padding:6px 0;padding-left:18px;position:relative;line-height:1.45;"><span style="position:absolute;left:0;color:var(--blue);font-weight:700;">›</span> <strong style="color:var(--content)">Day 18 (between Email 4 & 5):</strong> Short DM — "Saw [trigger event/news about Company]. Happy to share how we're helping similar FSI teams if useful."</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PHONE SCRIPT -->
+  <div style="margin-top: 16px;">
+    <div class="card" style="border-left: 3px solid var(--accent);">
+      <h3 style="font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 14px; color: var(--content);"><i class="fas fa-phone" style="color: var(--accent); margin-right: 8px;"></i> Cold Call Script — 30-Second Opener</h3>
+      <p style="font-size: 14px; color: var(--content); line-height: 1.7; font-style: italic;">
+        "Hi [Name], this is Tyler from Grafana Labs. I know I'm calling cold, so I'll be quick — 30 seconds and you can tell me to stop.<br><br>
+        I work with platform engineering leaders at Singapore banks and fintechs who are dealing with observability costs that are scaling faster than their infrastructure. Most are running 3-4 monitoring tools and spending more time managing them than using them.<br><br>
+        We've helped similar FSI teams consolidate onto one open platform and cut costs by 40-60%. Is that a problem you're seeing at [Company], or am I off base?"
+      </p>
+      <p style="font-size: 12px; color: var(--muted); margin-top: 10px;"><strong>If yes:</strong> "Would it be worth 20 minutes to compare notes? I can show you what [Erste Digital / Digital Banking Platform] did — similar situation, regulated environment." <br><strong>If no/busy:</strong> "Totally fair. Can I send you a one-pager and follow up in a couple of weeks?"</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p><strong style="color:var(--muted);">FSI Singapore Playbook</strong> · Prepared for Tyler Layton, Senior Velocity Account Executive · Grafana Labs Sales · April 2026</p>
+  <p style="margin-top: 6px;">Sources: @enablement-knowledge-icp · @enablement-knowledge-personas · @enablement-knowledge-sales-motions · @enablement-knowledge-value-framework · @enablement-knowledge-select-first-pane-of-glass-playbook · Grafana customer success stories</p>
+</div>
+
+<script>
+  // Smooth scroll for nav links
+  document.querySelectorAll('.nav a').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.querySelectorAll('.nav a').forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+
+  // Update active nav on scroll
+  const sections = document.querySelectorAll('.section');
+  const navLinks = document.querySelectorAll('.nav a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const top = section.offsetTop - 80;
+      if (window.scrollY >= top) current = section.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
