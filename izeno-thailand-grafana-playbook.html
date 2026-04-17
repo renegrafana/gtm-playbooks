@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iZeno Thailand — Grafana Cloud & Enterprise Partner Playbook</title>
+<script>
+  window.GTM_PAGE_CONTEXT = {
+    title: "iZeno Thailand — Grafana Cloud & Enterprise Partner Playbook",
+    sources: ["Manually maintained"],
+    methodology: "Content by Rene Wong, Strategic Channel Manager — Grafana Labs Channel Sales. Thai translation provided for partner enablement."
+  };
+</script>
+<style>
+  :root {
+    --orange: #F46800;
+    --orange-light: #FFF4EB;
+    --dark: #1a1a2e;
+    --text: #2d2d3a;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --bg: #f9fafb;
+    --white: #ffffff;
+    --green: #10b981;
+    --blue: #3b82f6;
+    --purple: #8b5cf6;
+    --red: #ef4444;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: var(--text); line-height: 1.7; background: var(--bg); }
+  
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, var(--dark) 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    padding: 60px 40px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(244,104,0,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-inner { max-width: 960px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(244,104,0,0.2);
+    color: var(--orange);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .hero h1 { font-size: 36px; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.5px; }
+  .hero p { font-size: 18px; color: rgba(255,255,255,0.75); max-width: 700px; }
+  .hero-meta { margin-top: 24px; display: flex; gap: 32px; font-size: 13px; color: rgba(255,255,255,0.5); }
+  .hero-meta span { display: flex; align-items: center; gap: 6px; }
+
+  /* Language toggle */
+  .lang-toggle-wrapper {
+    position: absolute;
+    top: 24px;
+    right: 40px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .lang-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    transition: color 0.3s;
+  }
+  .lang-label.active { color: white; }
+  .lang-switch {
+    width: 52px;
+    height: 28px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 14px;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.3s;
+    border: 2px solid rgba(255,255,255,0.3);
+  }
+  .lang-switch:hover { background: rgba(255,255,255,0.3); }
+  .lang-switch .knob {
+    width: 20px;
+    height: 20px;
+    background: var(--orange);
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: left 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+  .lang-switch.th .knob { left: 26px; }
+
+  /* Language visibility */
+  [data-lang="th"] { display: none; }
+  body.lang-th [data-lang="en"] { display: none; }
+  body.lang-th [data-lang="th"] { display: block; }
+  body.lang-th table[data-lang="en"] { display: none; }
+  body.lang-th table[data-lang="th"] { display: table; }
+  body.lang-th div[data-lang="en"] { display: none; }
+  body.lang-th div[data-lang="th"] { display: block; }
+  body.lang-th .dq-grid[data-lang="en"] { display: none; }
+  body.lang-th .dq-grid[data-lang="th"] { display: grid; }
+  body.lang-th p[data-lang="en"] { display: none; }
+  body.lang-th p[data-lang="th"] { display: block; }
+
+  /* Main */
+  .main { max-width: 960px; margin: 0 auto; padding: 40px 40px 60px; }
+
+  /* Section */
+  .section { margin-bottom: 48px; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--orange);
+  }
+  .section-number {
+    background: var(--orange);
+    color: white;
+    font-size: 14px;
+    font-weight: 800;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .section-header h2 { font-size: 22px; font-weight: 700; color: var(--dark); }
+
+  /* Cards */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .card h3 { font-size: 17px; font-weight: 700; color: var(--dark); margin-bottom: 10px; }
+  .card h4 { font-size: 14px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; margin-top: 18px; }
+  .card p, .card li { font-size: 15px; color: var(--text); }
+  .card ul { padding-left: 20px; margin-top: 6px; }
+  .card li { margin-bottom: 6px; }
+
+  /* Pitch box */
+  .pitch-box {
+    background: linear-gradient(135deg, var(--orange-light) 0%, #fff 100%);
+    border: 2px solid var(--orange);
+    border-radius: 16px;
+    padding: 36px 40px;
+    margin-bottom: 24px;
+  }
+  .pitch-box h3 {
+    color: var(--orange);
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+  .pitch-box .pitch-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--dark);
+    font-style: italic;
+  }
+  .pitch-box .pitch-text strong { color: var(--orange); font-style: normal; }
+
+  /* Conversation flow */
+  .flow-step {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+  }
+  .flow-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+    color: white;
+    font-weight: 700;
+  }
+  .flow-content { flex: 1; }
+  .flow-content h4 { font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+  .flow-content p { font-size: 14px; color: var(--muted); }
+
+  /* Tag */
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+  }
+  .tag-cloud { background: #dbeafe; color: #1d4ed8; }
+  .tag-ent { background: #ede9fe; color: #6d28d9; }
+  .tag-both { background: #d1fae5; color: #047857; }
+
+  /* Talk track table */
+  .talk-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 14px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .talk-table th {
+    background: var(--dark);
+    color: white;
+    text-align: left;
+    padding: 14px 18px;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .talk-table td {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .talk-table tr:last-child td { border-bottom: none; }
+  .talk-table tr:nth-child(even) td { background: #f9fafb; }
+  .talk-table .label-col { font-weight: 700; color: var(--dark); white-space: nowrap; width: 140px; }
+
+  /* Objection cards */
+  .objection {
+    background: var(--white);
+    border-left: 4px solid var(--orange);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 24px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .objection .obj-q { font-weight: 700; color: var(--dark); margin-bottom: 8px; font-size: 15px; }
+  .objection .obj-a { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+  /* Discovery questions */
+  .dq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .dq-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .dq-item .dq-cat {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .dq-item p { font-size: 14px; color: var(--text); font-weight: 500; }
+
+  /* CTA box */
+  .cta-box {
+    background: linear-gradient(135deg, var(--dark) 0%, #0f3460 100%);
+    border-radius: 16px;
+    padding: 36px 40px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .cta-box h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+  .cta-box p { font-size: 14px; color: rgba(255,255,255,0.7); }
+
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 36px; }
+    .hero h1 { font-size: 26px; }
+    .main { padding: 24px 20px 40px; }
+    .dq-grid { grid-template-columns: 1fr; }
+    .cta-box { flex-direction: column; text-align: center; }
+    .hero-meta { flex-direction: column; gap: 8px; }
+    .lang-toggle-wrapper { top: 16px; right: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-inner">
+    <!-- Language Toggle -->
+    <div class="lang-toggle-wrapper">
+      <span class="lang-label active" id="label-en">EN</span>
+      <div class="lang-switch" id="langSwitch" onclick="toggleLang()" title="Switch language / สลับภาษา">
+        <div class="knob"></div>
+      </div>
+      <span class="lang-label" id="label-th">TH 🇹🇭</span>
+    </div>
+
+    <div class="hero-badge" data-lang="en">🇹🇭 Partner Playbook</div>
+    <div class="hero-badge" data-lang="th">🇹🇭 คู่มือพาร์ทเนอร์</div>
+
+    <h1 data-lang="en">iZeno Thailand × Grafana</h1>
+    <h1 data-lang="th">iZeno ประเทศไทย × Grafana</h1>
+
+    <p data-lang="en">A practical guide to pitching Grafana Cloud and Grafana Enterprise to your customers — in plain English, with conversation frameworks and discovery questions.</p>
+    <p data-lang="th">คู่มือปฏิบัติสำหรับการนำเสนอ Grafana Cloud และ Grafana Enterprise ให้กับลูกค้าของคุณ — พร้อมกรอบการสนทนาและคำถามเพื่อค้นหาความต้องการ</p>
+
+    <div class="hero-meta" data-lang="en">
+      <span>📄 Partner Enablement</span>
+      <span>👤 Prepared by Rene Wong</span>
+      <span>📅 April 2026</span>
+    </div>
+    <div class="hero-meta" data-lang="th">
+      <span>📄 เอกสารสนับสนุนพาร์ทเนอร์</span>
+      <span>👤 จัดทำโดย Rene Wong</span>
+      <span>📅 เมษายน 2569</span>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SECTION 1: THE SIMPLE PITCH -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">1</div>
+    <h2 data-lang="en">The Simple Pitch — What Is Grafana?</h2>
+    <h2 data-lang="th">การนำเสนอแบบง่าย — Grafana คืออะไร?</h2>
+  </div>
+
+  <!-- EN Pitch -->
+  <div class="pitch-box" data-lang="en">
+    <h3>🎯 The 30-Second Elevator Pitch</h3>
+    <p class="pitch-text">
+      "Every company today runs on technology — apps, servers, cloud services, databases. When something breaks or slows down, it costs money and frustrates customers. <strong>Grafana</strong> gives your engineering team <strong>one place to see everything</strong> — all your metrics, logs, traces, and alerts — so they can find and fix problems <strong>before</strong> customers even notice. Think of it as the <strong>command center</strong> for your entire technology stack."
+    </p>
+  </div>
+  <!-- TH Pitch -->
+  <div class="pitch-box" data-lang="th">
+    <h3>🎯 การนำเสนอ 30 วินาที</h3>
+    <p class="pitch-text">
+      "ทุกบริษัทในปัจจุบันขับเคลื่อนด้วยเทคโนโลยี — แอปพลิเคชัน, เซิร์ฟเวอร์, บริการคลาวด์, ฐานข้อมูล เมื่อระบบขัดข้องหรือทำงานช้าลง มันสร้างค่าใช้จ่ายและทำให้ลูกค้าไม่พอใจ <strong>Grafana</strong> ให้ทีมวิศวกรของคุณมี<strong>ที่เดียวในการดูทุกอย่าง</strong> — ทั้ง metrics, logs, traces และการแจ้งเตือน — เพื่อให้พวกเขาสามารถค้นหาและแก้ไขปัญหาได้<strong>ก่อน</strong>ที่ลูกค้าจะสังเกตเห็น คิดว่ามันเป็น<strong>ศูนย์บัญชาการ</strong>สำหรับระบบเทคโนโลยีทั้งหมดของคุณ"
+    </p>
+  </div>
+
+  <!-- EN Story -->
+  <div class="card" data-lang="en">
+    <h3>Explain It Like a Story</h3>
+    <p>Use this analogy when talking to non-technical stakeholders:</p>
+    <br>
+    <p><strong>🏥 The Hospital Analogy:</strong> Imagine a hospital where every patient's vitals — heart rate, blood pressure, oxygen — are shown on separate screens in separate rooms. If a patient has a problem, the doctor has to run between rooms to figure out what's wrong. That's how most companies monitor their technology today — different tools for different things, none of them connected.</p>
+    <br>
+    <p><strong>Grafana is like putting all those monitors on one screen at the nurse's station.</strong> The doctor sees everything at a glance, gets alerted instantly when something is off, and can act fast. That's what Grafana does for engineering teams.</p>
+  </div>
+  <!-- TH Story -->
+  <div class="card" data-lang="th">
+    <h3>อธิบายด้วยเรื่องเล่า</h3>
+    <p>ใช้การเปรียบเทียบนี้เมื่อพูดคุยกับผู้บริหารที่ไม่ใช่สายเทคนิค:</p>
+    <br>
+    <p><strong>🏥 การเปรียบเทียบกับโรงพยาบาล:</strong> ลองนึกภาพโรงพยาบาลที่สัญญาณชีพของผู้ป่วยทุกคน — อัตราการเต้นของหัวใจ, ความดันโลหิต, ออกซิเจน — แสดงบนหน้าจอแยกกันในห้องต่างๆ ถ้าผู้ป่วยมีปัญหา หมอต้องวิ่งไปมาระหว่างห้องเพื่อหาว่าเกิดอะไรขึ้น นั่นคือวิธีที่บริษัทส่วนใหญ่ติดตามระบบเทคโนโลยีในปัจจุบัน — เครื่องมือแยกกันสำหรับแต่ละอย่าง ไม่มีการเชื่อมต่อกัน</p>
+    <br>
+    <p><strong>Grafana เหมือนกับการนำจอมอนิเตอร์ทั้งหมดมารวมไว้ที่หน้าจอเดียวของสถานีพยาบาล</strong> หมอเห็นทุกอย่างในมุมมองเดียว ได้รับการแจ้งเตือนทันทีเมื่อมีสิ่งผิดปกติ และสามารถลงมือแก้ไขได้อย่างรวดเร็ว นั่นคือสิ่งที่ Grafana ทำให้ทีมวิศวกร</p>
+  </div>
+
+  <!-- EN Value Props -->
+  <div class="card" data-lang="en">
+    <h3>The Three Big Value Props (Keep It Simple)</h3>
+    <ul>
+      <li><strong>🔍 See Everything in One Place</strong> — Grafana connects to 100+ data sources (Prometheus, CloudWatch, Elasticsearch, Datadog, etc.). No more switching between 5 different tools.</li>
+      <li><strong>⚡ Find Problems Faster</strong> — Correlate metrics, logs, and traces side by side. Go from "something is slow" to "here's exactly what's wrong" in minutes, not hours.</li>
+      <li><strong>💰 Save Money</strong> — Open-source at its core means no per-seat licensing. Grafana Cloud is usage-based, so you only pay for what you actually use. Most companies save 30-60% compared to Datadog or Splunk.</li>
+    </ul>
+  </div>
+  <!-- TH Value Props -->
+  <div class="card" data-lang="th">
+    <h3>คุณค่าหลัก 3 ประการ (อธิบายแบบง่ายๆ)</h3>
+    <ul>
+      <li><strong>🔍 ดูทุกอย่างในที่เดียว</strong> — Grafana เชื่อมต่อกับแหล่งข้อมูลกว่า 100 แหล่ง (Prometheus, CloudWatch, Elasticsearch, Datadog ฯลฯ) ไม่ต้องสลับไปมาระหว่าง 5 เครื่องมือที่แตกต่างกันอีกต่อไป</li>
+      <li><strong>⚡ ค้นหาปัญหาได้เร็วขึ้น</strong> — เชื่อมโยง metrics, logs และ traces เคียงข้างกัน เปลี่ยนจาก "มีบางอย่างช้า" เป็น "นี่คือสิ่งที่ผิดพลาดอย่างแน่ชัด" ในไม่กี่นาที ไม่ใช่หลายชั่วโมง</li>
+      <li><strong>💰 ประหยัดค่าใช้จ่าย</strong> — แกนหลักเป็น Open-source หมายความว่าไม่มีค่าไลเซนส์ต่อผู้ใช้ Grafana Cloud คิดค่าบริการตามการใช้งานจริง จ่ายเฉพาะสิ่งที่ใช้จริงเท่านั้น บริษัทส่วนใหญ่ประหยัดได้ 30-60% เมื่อเทียบกับ Datadog หรือ Splunk</li>
+    </ul>
+  </div>
+
+  <!-- EN Comparison Table -->
+  <div class="card" data-lang="en">
+    <h3>Grafana Cloud vs. Grafana Enterprise — When to Offer What</h3>
+    <table class="talk-table" style="margin-top:12px;">
+      <tr>
+        <th style="width:180px;">Factor</th>
+        <th><span class="tag tag-cloud">Grafana Cloud</span> SaaS</th>
+        <th><span class="tag tag-ent">Enterprise</span> Self-Managed</th>
+      </tr>
+      <tr>
+        <td class="label-col">Best for</td>
+        <td>Companies who want to move fast, reduce operational overhead, and let Grafana handle the infrastructure</td>
+        <td>Companies with strict data residency, regulatory, or air-gapped requirements</td>
+      </tr>
+      <tr>
+        <td class="label-col">Where data lives</td>
+        <td>Grafana-managed cloud (AWS/GCP/Azure)</td>
+        <td>Customer's own infrastructure</td>
+      </tr>
+      <tr>
+        <td class="label-col">Maintenance</td>
+        <td>Fully managed — Grafana handles upgrades, scaling, uptime</td>
+        <td>Customer manages — but with Grafana enterprise support</td>
+      </tr>
+      <tr>
+        <td class="label-col">Pricing</td>
+        <td>Usage-based (pay per metric, log GB, trace span)</td>
+        <td>License subscription (annual)</td>
+      </tr>
+      <tr>
+        <td class="label-col">Lead with</td>
+        <td><strong>Default recommendation</strong> — most customers start here</td>
+        <td>Only when Cloud isn't possible due to compliance or existing investment</td>
+      </tr>
+    </table>
+    <p style="margin-top:14px; font-size:13px; color:var(--muted);"><strong>💡 Pro tip:</strong> Always lead with Grafana Cloud. It's easier to sell, faster to deploy, and generates recurring revenue for iZeno. Only pivot to Enterprise if the customer has a hard requirement for self-managed.</p>
+  </div>
+  <!-- TH Comparison Table -->
+  <div class="card" data-lang="th">
+    <h3>Grafana Cloud กับ Grafana Enterprise — ควรเสนออะไรเมื่อไหร่</h3>
+    <table class="talk-table" style="margin-top:12px;">
+      <tr>
+        <th style="width:180px;">ปัจจัย</th>
+        <th><span class="tag tag-cloud">Grafana Cloud</span> SaaS</th>
+        <th><span class="tag tag-ent">Enterprise</span> Self-Managed</th>
+      </tr>
+      <tr>
+        <td class="label-col">เหมาะกับ</td>
+        <td>บริษัทที่ต้องการเคลื่อนที่เร็ว ลดภาระการดูแลระบบ และให้ Grafana จัดการโครงสร้างพื้นฐาน</td>
+        <td>บริษัทที่มีข้อกำหนดเรื่องการจัดเก็บข้อมูลในประเทศ กฎระเบียบ หรือระบบปิด (air-gapped)</td>
+      </tr>
+      <tr>
+        <td class="label-col">ข้อมูลอยู่ที่ไหน</td>
+        <td>คลาวด์ที่ Grafana จัดการ (AWS/GCP/Azure)</td>
+        <td>โครงสร้างพื้นฐานของลูกค้าเอง</td>
+      </tr>
+      <tr>
+        <td class="label-col">การดูแลระบบ</td>
+        <td>จัดการให้ทั้งหมด — Grafana ดูแลการอัปเกรด, ขยายระบบ, ความพร้อมใช้งาน</td>
+        <td>ลูกค้าจัดการเอง — แต่มีการสนับสนุนระดับ Enterprise จาก Grafana</td>
+      </tr>
+      <tr>
+        <td class="label-col">ราคา</td>
+        <td>ตามการใช้งาน (จ่ายต่อ metric, log GB, trace span)</td>
+        <td>สัญญาไลเซนส์รายปี</td>
+      </tr>
+      <tr>
+        <td class="label-col">นำเสนอก่อน</td>
+        <td><strong>คำแนะนำเริ่มต้น</strong> — ลูกค้าส่วนใหญ่เริ่มที่นี่</td>
+        <td>เฉพาะเมื่อ Cloud ไม่สามารถใช้ได้เนื่องจากข้อกำหนดด้านการปฏิบัติตามกฎระเบียบ</td>
+      </tr>
+    </table>
+    <p style="margin-top:14px; font-size:13px; color:var(--muted);"><strong>💡 เคล็ดลับ:</strong> นำเสนอ Grafana Cloud ก่อนเสมอ ขายง่ายกว่า ติดตั้งเร็วกว่า และสร้างรายได้ต่อเนื่องให้ iZeno เปลี่ยนไป Enterprise เฉพาะเมื่อลูกค้ามีความต้องการจริงๆ ที่ต้อง self-managed เท่านั้น</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SECTION 2: HOW TO APPROACH THE CONVERSATION -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">2</div>
+    <h2 data-lang="en">How to Start the Conversation</h2>
+    <h2 data-lang="th">วิธีเริ่มบทสนทนา</h2>
+  </div>
+
+  <!-- EN Pain Points -->
+  <div class="card" data-lang="en">
+    <h3>The Golden Rule: Don't Lead with the Product</h3>
+    <p>The biggest mistake in selling Grafana is opening with features and dashboards. Instead, <strong>start with their pain</strong>. Every IT leader in Thailand is dealing with at least one of these problems:</p>
+    <br>
+    <div class="flow-step">
+      <div class="flow-icon" style="background: var(--red);">🔥</div>
+      <div class="flow-content">
+        <h4>"We keep getting blindsided by outages"</h4>
+        <p>They find out about problems from customers or management — not from their monitoring.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-icon" style="background: var(--blue);">🧩</div>
+      <div class="flow-content">
+        <h4>"We have too many tools and no single view"</h4>
+        <p>Separate tools for metrics, logs, APM, infra. Teams can't collaborate across silos.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-icon" style="background: var(--purple);">💸</div>
+      <div class="flow-content">
+        <h4>"Our observability costs are out of control"</h4>
+        <p>Datadog, Splunk, or New Relic bills are growing 30-50% year over year. Per-seat licensing is killing them.</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-icon" style="background: var(--green);">☁️</div>
+      <div class="flow-content">
+        <h4>"We're moving to the cloud and need modern monitoring"</h4>
+        <p>Legacy tools like Nagios, Zabbix, or PRTG don't work for Kubernetes, microservices, or multi-cloud.</p>
+      </div>
+    </div>
+  </div>
+  <!-- TH Pain Points -->
+  <div class="card" data-lang="th">
+    <h3>กฎทอง: อย่าเริ่มด้วยผลิตภัณฑ์</h3>
+    <p>ข้อผิดพลาดใหญ่ที่สุดในการขาย Grafana คือการเปิดด้วยฟีเจอร์และแดชบอร์ด ให้<strong>เริ่มจากปัญหาของพวกเขาแทน</strong> ผู้นำ IT ทุกคนในประเทศไทยกำลังเผชิญกับปัญหาอย่างน้อยหนึ่งข้อต่อไปนี้:</p>
+    <br>
+    <div class="flow-step">
+      <div class="flow-icon" style="background: var(--red);">🔥</div>
+      <div class="flow-content">
+        <h4>"เราถูกจู่โจมด้วยเหตุขัดข้องตลอดเวลา"</h4>
+        <p>พวกเขารู้เรื่องปัญหาจากลูกค้าหรือผู้บริหาร — ไม่ใช่จากระบบมอนิเตอร์</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-icon" style="background: var(--blue);">🧩</div>
+      <div class="flow-content">
+        <h4>"เรามีเครื่องมือมากเกินไปและไม่มีมุมมองรวม"</h4>
+        <p>เครื่องมือแยกกันสำหรับ metrics, logs, APM, infrastructure ทีมไม่สามารถทำงานร่วมกันข้ามไซโลได้</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-icon" style="background: var(--purple);">💸</div>
+      <div class="flow-content">
+        <h4>"ค่าใช้จ่าย observability ของเราควบคุมไม่ได้"</h4>
+        <p>บิล Datadog, Splunk หรือ New Relic เพิ่มขึ้น 30-50% ทุกปี ค่าไลเซนส์ต่อผู้ใช้กำลังทำลายงบประมาณ</p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-icon" style="background: var(--green);">☁️</div>
+      <div class="flow-content">
+        <h4>"เรากำลังย้ายไปคลาวด์และต้องการการมอนิเตอร์สมัยใหม่"</h4>
+        <p>เครื่องมือรุ่นเก่าเช่น Nagios, Zabbix หรือ PRTG ไม่ทำงานกับ Kubernetes, microservices หรือ multi-cloud</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- EN Opening Lines -->
+  <div class="card" data-lang="en">
+    <h3>Opening Lines That Work</h3>
+    <p>Pick the opener that matches how you got the meeting:</p>
+    <table class="talk-table" style="margin-top:12px;">
+      <tr>
+        <th>Scenario</th>
+        <th>What to Say</th>
+      </tr>
+      <tr>
+        <td class="label-col">Cold outreach</td>
+        <td>"We've been working with companies like [similar Thai customer] who were struggling with [monitoring costs / tool sprawl / slow incident response]. We helped them consolidate to a single platform and cut their costs by 40%. Would it be worth a 20-minute conversation to see if you're facing similar challenges?"</td>
+      </tr>
+      <tr>
+        <td class="label-col">Existing iZeno customer</td>
+        <td>"As we've been supporting your infrastructure, we've noticed you're running [Prometheus / Elasticsearch / multiple monitoring tools]. A lot of our customers are consolidating these into Grafana — would you be open to seeing how that could simplify things for your team?"</td>
+      </tr>
+      <tr>
+        <td class="label-col">They already use open-source Grafana</td>
+        <td>"That's great — you're already seeing the value of Grafana! The challenge with self-managing is usually around scaling, high availability, and the time your team spends on maintenance. Grafana Cloud takes all of that off your plate. Can I show you what that looks like?"</td>
+      </tr>
+      <tr>
+        <td class="label-col">Tech event / meetup</td>
+        <td>"What does your team use to monitor your systems today? ... Interesting — what's your biggest frustration with that setup?"</td>
+      </tr>
+    </table>
+  </div>
+  <!-- TH Opening Lines -->
+  <div class="card" data-lang="th">
+    <h3>คำเปิดที่ได้ผล</h3>
+    <p>เลือกคำเปิดที่ตรงกับวิธีที่คุณได้มีติ้ง:</p>
+    <table class="talk-table" style="margin-top:12px;">
+      <tr>
+        <th>สถานการณ์</th>
+        <th>สิ่งที่ควรพูด</th>
+      </tr>
+      <tr>
+        <td class="label-col">การติดต่อครั้งแรก</td>
+        <td>"เราทำงานร่วมกับบริษัทเช่น [ลูกค้าไทยที่คล้ายกัน] ที่ประสบปัญหา [ค่ามอนิเตอร์ / เครื่องมือกระจัดกระจาย / การตอบสนองเหตุขัดข้องช้า] เราช่วยให้พวกเขารวมศูนย์เป็นแพลตฟอร์มเดียวและลดค่าใช้จ่ายลง 40% จะคุ้มไหมถ้าเราคุยกัน 20 นาทีเพื่อดูว่าคุณกำลังเผชิญความท้าทายที่คล้ายกันหรือไม่?"</td>
+      </tr>
+      <tr>
+        <td class="label-col">ลูกค้า iZeno ที่มีอยู่</td>
+        <td>"ในขณะที่เราสนับสนุนโครงสร้างพื้นฐานของคุณ เราสังเกตว่าคุณใช้ [Prometheus / Elasticsearch / เครื่องมือมอนิเตอร์หลายตัว] ลูกค้าจำนวนมากของเรากำลังรวมสิ่งเหล่านี้เข้าสู่ Grafana — คุณสนใจดูไหมว่าจะทำให้สิ่งต่างๆ ง่ายขึ้นสำหรับทีมของคุณได้อย่างไร?"</td>
+      </tr>
+      <tr>
+        <td class="label-col">ใช้ Grafana open-source อยู่แล้ว</td>
+        <td>"ดีมาก — คุณเห็นคุณค่าของ Grafana แล้ว! ความท้าทายของการจัดการเองมักจะอยู่ที่การ scaling, high availability และเวลาที่ทีมของคุณใช้ในการดูแลระบบ Grafana Cloud จะเอาทั้งหมดนี้ออกจากภาระของคุณ ขอให้ผมโชว์ให้ดูว่าเป็นอย่างไรได้ไหมครับ?"</td>
+      </tr>
+      <tr>
+        <td class="label-col">งานเทค / มีตอัป</td>
+        <td>"ทีมของคุณใช้อะไรในการมอนิเตอร์ระบบตอนนี้ครับ? ... น่าสนใจ — อะไรคือสิ่งที่น่าหงุดหงิดที่สุดกับระบบนั้น?"</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SECTION 3: TRANSITIONING TO DISCOVERY -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">3</div>
+    <h2 data-lang="en">Transitioning Into Discovery</h2>
+    <h2 data-lang="th">การเปลี่ยนผ่านสู่ขั้นตอนค้นหาความต้องการ</h2>
+  </div>
+
+  <!-- EN Flow -->
+  <div class="card" data-lang="en">
+    <h3>The Conversation Flow</h3>
+    <p style="margin-bottom:20px;">Follow this natural progression — don't skip steps. Each step builds trust and uncovers information you'll need.</p>
+
+    <div class="flow-step">
+      <div class="flow-icon" style="background: var(--orange);">1</div>
+      <div class="flow-content">
+        <h4>Empathize (2 mins)</h4>
+        <p>Acknowledge their world. <em>"Managing observability across [cloud/hybrid/on-prem] environments is getting more complex every year, especially as companies in Thailand are accelerating cloud adoption..."</em></p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-icon" style="background: var(--orange);">2</div>
+      <div class="flow-content">
+        <h4>Ask About Their Current State (5 mins)</h4>
+        <p>Understand what they have today. <em>"Walk me through what happens when something goes wrong in production — how does your team find out, and what tools do they use to investigate?"</em></p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-icon" style="background: var(--orange);">3</div>
+      <div class="flow-content">
+        <h4>Uncover the Pain (5 mins)</h4>
+        <p>Dig into what's not working. <em>"If you could fix one thing about how your team monitors and troubleshoots today, what would it be?"</em></p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-icon" style="background: var(--orange);">4</div>
+      <div class="flow-content">
+        <h4>Connect Grafana to Their Pain (3 mins)</h4>
+        <p>Now — and only now — introduce how Grafana solves what they just described. <em>"That's exactly the problem Grafana was built to solve. Let me show you how [specific customer] addressed the same challenge..."</em></p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-icon" style="background: var(--orange);">5</div>
+      <div class="flow-content">
+        <h4>Propose a Next Step (2 mins)</h4>
+        <p>Always end with a clear action. <em>"Would it make sense to set up a technical deep-dive with your engineering team? We can bring a Grafana solutions engineer to walk through your exact environment."</em></p>
+      </div>
+    </div>
+  </div>
+  <!-- TH Flow -->
+  <div class="card" data-lang="th">
+    <h3>ขั้นตอนการสนทนา</h3>
+    <p style="margin-bottom:20px;">ทำตามลำดับนี้อย่างเป็นธรรมชาติ — อย่าข้ามขั้นตอน แต่ละขั้นสร้างความไว้วางใจและเปิดเผยข้อมูลที่คุณต้องการ</p>
+
+    <div class="flow-step">
+      <div class="flow-icon" style="background: var(--orange);">1</div>
+      <div class="flow-content">
+        <h4>เข้าใจและเห็นอกเห็นใจ (2 นาที)</h4>
+        <p>ยอมรับความท้าทายของพวกเขา <em>"การจัดการ observability ข้ามสภาพแวดล้อม [cloud/hybrid/on-prem] ซับซ้อนมากขึ้นทุกปี โดยเฉพาะอย่างยิ่งเมื่อบริษัทในประเทศไทยกำลังเร่งการนำคลาวด์มาใช้..."</em></p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-icon" style="background: var(--orange);">2</div>
+      <div class="flow-content">
+        <h4>ถามเกี่ยวกับสถานะปัจจุบัน (5 นาที)</h4>
+        <p>เข้าใจสิ่งที่พวกเขามีในวันนี้ <em>"ช่วยเล่าให้ฟังหน่อยว่าเกิดอะไรขึ้นเมื่อระบบ production มีปัญหา — ทีมของคุณรู้ได้อย่างไร และใช้เครื่องมืออะไรในการตรวจสอบ?"</em></p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-icon" style="background: var(--orange);">3</div>
+      <div class="flow-content">
+        <h4>ค้นหาจุดเจ็บปวด (5 นาที)</h4>
+        <p>ขุดลึกลงไปหาสิ่งที่ไม่ทำงาน <em>"ถ้าคุณแก้ไขสิ่งเดียวเกี่ยวกับวิธีที่ทีมของคุณมอนิเตอร์และแก้ไขปัญหาในวันนี้ มันจะเป็นอะไร?"</em></p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-icon" style="background: var(--orange);">4</div>
+      <div class="flow-content">
+        <h4>เชื่อมโยง Grafana กับปัญหาของพวกเขา (3 นาที)</h4>
+        <p>ตอนนี้ — และตอนนี้เท่านั้น — แนะนำว่า Grafana แก้สิ่งที่พวกเขาเพิ่งอธิบายได้อย่างไร <em>"นั่นคือปัญหาที่ Grafana สร้างมาเพื่อแก้ไขอย่างแท้จริง ให้ผมโชว์ว่า [ลูกค้าเฉพาะราย] จัดการกับความท้าทายเดียวกันอย่างไร..."</em></p>
+      </div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-icon" style="background: var(--orange);">5</div>
+      <div class="flow-content">
+        <h4>เสนอขั้นตอนถัดไป (2 นาที)</h4>
+        <p>จบด้วย action ที่ชัดเจนเสมอ <em>"จะสมเหตุสมผลไหมที่จะตั้ง technical deep-dive กับทีมวิศวกรของคุณ? เราสามารถพา Grafana solutions engineer มาอธิบายตามสภาพแวดล้อมจริงของคุณ"</em></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- EN Bridge -->
+  <div class="card" data-lang="en">
+    <h3>The Transition Phrase — From Chat to Discovery</h3>
+    <p style="margin-bottom:14px;">When you feel the customer is engaged and acknowledging their pain, use a <strong>bridging statement</strong> to shift into structured discovery:</p>
+    <div style="background: var(--orange-light); border-radius: 10px; padding: 20px 24px; margin-bottom:14px;">
+      <p style="font-size:16px; font-style:italic; color: var(--dark);">"It sounds like you're dealing with [restate their pain]. Before I show you anything, I want to make sure I really understand your environment so I can show you something relevant — not just a generic demo. Mind if I ask a few quick questions?"</p>
+    </div>
+    <p style="font-size:13px; color:var(--muted);">This works because: (1) it shows you listened, (2) it positions discovery as being for <em>their</em> benefit, and (3) it gets permission so questions feel like a conversation, not an interrogation.</p>
+  </div>
+  <!-- TH Bridge -->
+  <div class="card" data-lang="th">
+    <h3>วลีเปลี่ยนผ่าน — จากการสนทนาสู่การค้นหาความต้องการ</h3>
+    <p style="margin-bottom:14px;">เมื่อคุณรู้สึกว่าลูกค้ามีส่วนร่วมและยอมรับปัญหาของพวกเขา ใช้<strong>ประโยคเชื่อมต่อ</strong>เพื่อเปลี่ยนไปสู่การค้นหาอย่างมีโครงสร้าง:</p>
+    <div style="background: var(--orange-light); border-radius: 10px; padding: 20px 24px; margin-bottom:14px;">
+      <p style="font-size:16px; font-style:italic; color: var(--dark);">"ฟังดูเหมือนคุณกำลังประสบปัญหา [พูดซ้ำปัญหาของเขา] ก่อนที่ผมจะโชว์อะไร ผมอยากเข้าใจสภาพแวดล้อมของคุณจริงๆ เพื่อที่จะได้โชว์สิ่งที่เกี่ยวข้อง — ไม่ใช่แค่เดโมทั่วไป ขออนุญาตถามคำถามสั้นๆ สักสองสามข้อได้ไหมครับ?"</p>
+    </div>
+    <p style="font-size:13px; color:var(--muted);">วิธีนี้ได้ผลเพราะ: (1) แสดงว่าคุณฟัง (2) วางตำแหน่ง discovery ว่าเป็นประโยชน์<em>ของพวกเขา</em> และ (3) ขออนุญาตเพื่อให้คำถามรู้สึกเหมือนการสนทนา ไม่ใช่การสอบสวน</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SECTION 4: DISCOVERY QUESTIONS -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">4</div>
+    <h2 data-lang="en">Discovery Questions to Ask</h2>
+    <h2 data-lang="th">คำถามเพื่อค้นหาความต้องการ</h2>
+  </div>
+
+  <p style="margin-bottom:20px; color:var(--muted); font-size:14px;" data-lang="en">You don't need to ask all of these — pick 5-7 based on the conversation. Listen more than you talk.</p>
+  <p style="margin-bottom:20px; color:var(--muted); font-size:14px;" data-lang="th">คุณไม่จำเป็นต้องถามทั้งหมด — เลือก 5-7 ข้อตามบทสนทนา ฟังมากกว่าพูด</p>
+
+  <!-- EN Discovery Grid -->
+  <div class="dq-grid" data-lang="en">
+    <div class="dq-item">
+      <div class="dq-cat" style="color: var(--blue);">📊 Current Tooling</div>
+      <p>"What tools are you using for monitoring and observability today?"</p>
+    </div>
+    <div class="dq-item">
+      <div class="dq-cat" style="color: var(--blue);">📊 Current Tooling</div>
+      <p>"Are you using any open-source Grafana today? If so, who manages it?"</p>
+    </div>
+    <div class="dq-item">
+      <div class="dq-cat" style="color: var(--red);">🔥 Pain & Impact</div>
+      <p>"How long does it typically take to detect and resolve an incident? What does that downtime cost you?"</p>
+    </div>
+    <div class="dq-item">
+      <div class="dq-cat" style="color: var(--red);">🔥 Pain & Impact</div>
+      <p>"What's the biggest gap in your monitoring today — what can't you see that you wish you could?"</p>
+    </div>
+    <div class="dq-item">
+      <div class="dq-cat" style="color: var(--green);">☁️ Environment</div>
+      <p>"What does your infrastructure look like? On-prem, cloud, hybrid? Which cloud providers?"</p>
+    </div>
+    <div class="dq-item">
+      <div class="dq-cat" style="color: var(--green);">☁️ Environment</div>
+      <p>"Are you running Kubernetes or containers? Are you adopting microservices?"</p>
+    </div>
+    <div class="dq-item">
+      <div class="dq-cat" style="color: var(--purple);">💰 Budget & Buying</div>
+      <p>"How much are you spending on monitoring tools today? Are those costs growing?"</p>
+    </div>
+    <div class="dq-item">
+      <div class="dq-cat" style="color: var(--purple);">💰 Budget & Buying</div>
+      <p>"Who on your team would be involved in evaluating a new observability platform?"</p>
+    </div>
+    <div class="dq-item">
+      <div class="dq-cat" style="color: var(--orange);">🎯 Future State</div>
+      <p>"If you had a magic wand, what would your ideal monitoring setup look like in 12 months?"</p>
+    </div>
+    <div class="dq-item">
+      <div class="dq-cat" style="color: var(--orange);">🎯 Future State</div>
+      <p>"Are there any compliance or data sovereignty requirements we should know about?"</p>
+    </div>
+  </div>
+  <!-- TH Discovery Grid -->
+  <div class="dq-grid" data-lang="th">
+    <div class="dq-item">
+      <div class="dq-cat" style="color: var(--blue);">📊 เครื่องมือปัจจุบัน</div>
+      <p>"ตอนนี้คุณใช้เครื่องมืออะไรสำหรับการมอนิเตอร์และ observability?"</p>
+    </div>
+    <div class="dq-item">
+      <div class="dq-cat" style="color: var(--blue);">📊 เครื่องมือปัจจุบัน</div>
+      <p>"คุณใช้ Grafana open-source อยู่ไหม? ถ้าใช่ ใครเป็นคนจัดการ?"</p>
+    </div>
+    <div class="dq-item">
+      <div class="dq-cat" style="color: var(--red);">🔥 ปัญหาและผลกระทบ</div>
+      <p>"โดยปกติใช้เวลานานเท่าไหร่ในการตรวจจับและแก้ไขเหตุขัดข้อง? เวลาหยุดทำงานนั้นสร้างค่าใช้จ่ายให้คุณเท่าไหร่?"</p>
+    </div>
+    <div class="dq-item">
+      <div class="dq-cat" style="color: var(--red);">🔥 ปัญหาและผลกระทบ</div>
+      <p>"ช่องว่างที่ใหญ่ที่สุดในการมอนิเตอร์ของคุณวันนี้คืออะไร — อะไรที่คุณมองไม่เห็นแต่อยากเห็น?"</p>
+    </div>
+    <div class="dq-item">
+      <div class="dq-cat" style="color: var(--green);">☁️ สภาพแวดล้อม</div>
+      <p>"โครงสร้างพื้นฐานของคุณเป็นอย่างไร? On-prem, คลาวด์, หรือไฮบริด? ใช้คลาวด์ผู้ให้บริการใด?"</p>
+    </div>
+    <div class="dq-item">
+      <div class="dq-cat" style="color: var(--green);">☁️ สภาพแวดล้อม</div>
+      <p>"คุณใช้ Kubernetes หรือ containers ไหม? กำลังนำ microservices มาใช้หรือเปล่า?"</p>
+    </div>
+    <div class="dq-item">
+      <div class="dq-cat" style="color: var(--purple);">💰 งบประมาณและการจัดซื้อ</div>
+      <p>"ตอนนี้คุณใช้จ่ายกับเครื่องมือมอนิเตอร์เท่าไหร่? ค่าใช้จ่ายเหล่านั้นเพิ่มขึ้นหรือเปล่า?"</p>
+    </div>
+    <div class="dq-item">
+      <div class="dq-cat" style="color: var(--purple);">💰 งบประมาณและการจัดซื้อ</div>
+      <p>"ใครในทีมของคุณจะมีส่วนร่วมในการประเมินแพลตฟอร์ม observability ใหม่?"</p>
+    </div>
+    <div class="dq-item">
+      <div class="dq-cat" style="color: var(--orange);">🎯 สถานะในอนาคต</div>
+      <p>"ถ้าคุณมีไม้กายสิทธิ์ ระบบมอนิเตอร์ในอุดมคติของคุณจะเป็นอย่างไรใน 12 เดือน?"</p>
+    </div>
+    <div class="dq-item">
+      <div class="dq-cat" style="color: var(--orange);">🎯 สถานะในอนาคต</div>
+      <p>"มีข้อกำหนดด้านการปฏิบัติตามกฎระเบียบหรือการจัดเก็บข้อมูลในประเทศที่เราควรทราบหรือไม่?"</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SECTION 5: HANDLING OBJECTIONS -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">5</div>
+    <h2 data-lang="en">Common Objections & How to Handle Them</h2>
+    <h2 data-lang="th">การโต้แย้งที่พบบ่อยและวิธีรับมือ</h2>
+  </div>
+
+  <!-- EN Objections -->
+  <div data-lang="en">
+    <div class="objection">
+      <div class="obj-q">❓ "We already use open-source Grafana for free — why would we pay?"</div>
+      <div class="obj-a">"That's a great starting point! The challenge is that as you scale, someone on your team has to manage upgrades, high availability, backups, and storage. Grafana Cloud takes all of that off your plate. Most teams find they're spending more on engineering time maintaining self-hosted Grafana than the Cloud subscription would cost. Plus you get access to Grafana's full LGTM stack — Loki for logs, Mimir for metrics, Tempo for traces — fully integrated and managed."</div>
+    </div>
+    <div class="objection">
+      <div class="obj-q">❓ "We're already using Datadog / Splunk / New Relic"</div>
+      <div class="obj-a">"Those are solid tools — the challenge customers tell us is that costs keep growing as data volumes increase, especially with per-host or per-seat pricing. Grafana's usage-based model means you only pay for what you ingest. Many customers start by running Grafana alongside their existing tool, using it as a single pane of glass, and gradually migrate workloads as they see the value and savings."</div>
+    </div>
+    <div class="objection">
+      <div class="obj-q">❓ "We don't have the team or skills for this"</div>
+      <div class="obj-a">"That's exactly where iZeno comes in. We handle the implementation, training, and ongoing support. And with Grafana Cloud, there's no infrastructure to manage — your team can focus on building dashboards and alerts, not maintaining the platform. Grafana also has a massive community and thousands of pre-built dashboards your team can use on day one."</div>
+    </div>
+    <div class="objection">
+      <div class="obj-q">❓ "Our data has to stay in Thailand / on-premises"</div>
+      <div class="obj-a">"Understood — data sovereignty is important. Two options: (1) Grafana Cloud has a dedicated cluster option that lets you choose where your data is stored, or (2) Grafana Enterprise gives you the full platform to run on your own infrastructure with enterprise support. Either way, you get the same powerful platform."</div>
+    </div>
+    <div class="objection">
+      <div class="obj-q">❓ "Isn't Grafana just dashboards?"</div>
+      <div class="obj-a">"That's the most common misconception! Grafana started as a dashboarding tool, but today it's a full observability platform. Grafana Cloud includes its own database for metrics (Mimir), logs (Loki), and traces (Tempo), plus alerting, incident management, on-call routing, synthetic monitoring, and more. It's a complete alternative to Datadog or Splunk — not just a visualization layer."</div>
+    </div>
+  </div>
+  <!-- TH Objections -->
+  <div data-lang="th">
+    <div class="objection">
+      <div class="obj-q">❓ "เราใช้ Grafana open-source ฟรีอยู่แล้ว — ทำไมต้องจ่ายเงิน?"</div>
+      <div class="obj-a">"นั่นเป็นจุดเริ่มต้นที่ดี! ความท้าทายคือเมื่อคุณขยายระบบ จะต้องมีคนในทีมจัดการอัปเกรด, high availability, สำรองข้อมูล และพื้นที่จัดเก็บ Grafana Cloud จะเอาภาระทั้งหมดนี้ออกจากคุณ ทีมส่วนใหญ่พบว่าพวกเขาใช้เวลาวิศวกรในการดูแล Grafana ที่โฮสต์เองมากกว่าค่าสมาชิก Cloud จะเสียอีก นอกจากนี้คุณยังเข้าถึง LGTM stack เต็มรูปแบบของ Grafana — Loki สำหรับ logs, Mimir สำหรับ metrics, Tempo สำหรับ traces — ถูกรวมและจัดการให้ทั้งหมด"</div>
+    </div>
+    <div class="objection">
+      <div class="obj-q">❓ "เราใช้ Datadog / Splunk / New Relic อยู่แล้ว"</div>
+      <div class="obj-a">"เหล่านั้นเป็นเครื่องมือที่ดี — ความท้าทายที่ลูกค้าบอกเราคือค่าใช้จ่ายเพิ่มขึ้นเรื่อยๆ เมื่อปริมาณข้อมูลเพิ่ม โดยเฉพาะกับราคาต่อโฮสต์หรือต่อผู้ใช้ โมเดลตามการใช้งานของ Grafana หมายความว่าคุณจ่ายเฉพาะสิ่งที่รับเข้ามา ลูกค้าจำนวนมากเริ่มโดยใช้ Grafana ควบคู่กับเครื่องมือที่มีอยู่ ใช้เป็น single pane of glass และค่อยๆ ย้ายภาระงานเมื่อเห็นคุณค่าและการประหยัด"</div>
+    </div>
+    <div class="objection">
+      <div class="obj-q">❓ "เราไม่มีทีมหรือทักษะสำหรับสิ่งนี้"</div>
+      <div class="obj-a">"นั่นคือจุดที่ iZeno เข้ามาอย่างแน่นอน เราจัดการการติดตั้ง, การฝึกอบรม และการสนับสนุนอย่างต่อเนื่อง และด้วย Grafana Cloud ไม่มีโครงสร้างพื้นฐานที่ต้องจัดการ — ทีมของคุณสามารถมุ่งเน้นการสร้างแดชบอร์ดและการแจ้งเตือน ไม่ใช่การดูแลแพลตฟอร์ม Grafana ยังมีชุมชนขนาดใหญ่และแดชบอร์ดสำเร็จรูปหลายพันตัวที่ทีมของคุณสามารถใช้ได้ตั้งแต่วันแรก"</div>
+    </div>
+    <div class="objection">
+      <div class="obj-q">❓ "ข้อมูลของเราต้องอยู่ในประเทศไทย / on-premises"</div>
+      <div class="obj-a">"เข้าใจครับ — อธิปไตยข้อมูลเป็นเรื่องสำคัญ มีสองทางเลือก: (1) Grafana Cloud มี dedicated cluster ที่ให้คุณเลือกว่าข้อมูลจัดเก็บที่ไหน หรือ (2) Grafana Enterprise ให้แพลตฟอร์มเต็มรูปแบบเพื่อรันบนโครงสร้างพื้นฐานของคุณเองพร้อมการสนับสนุนระดับ enterprise ไม่ว่าทางใด คุณได้แพลตฟอร์มที่ทรงพลังเหมือนกัน"</div>
+    </div>
+    <div class="objection">
+      <div class="obj-q">❓ "Grafana ก็แค่แดชบอร์ดไม่ใช่เหรอ?"</div>
+      <div class="obj-a">"นั่นเป็นความเข้าใจผิดที่พบบ่อยที่สุด! Grafana เริ่มต้นเป็นเครื่องมือแดชบอร์ด แต่วันนี้เป็นแพลตฟอร์ม observability เต็มรูปแบบ Grafana Cloud มีฐานข้อมูลของตัวเองสำหรับ metrics (Mimir), logs (Loki) และ traces (Tempo) รวมถึงการแจ้งเตือน, การจัดการเหตุขัดข้อง, การจัดตารางเวร, synthetic monitoring และอื่นๆ อีกมากมาย เป็นทางเลือกที่สมบูรณ์แทน Datadog หรือ Splunk — ไม่ใช่แค่ชั้นการแสดงผล"</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SECTION 6: NEXT STEPS -->
+<!-- ══════════════════════════════════════════════ -->
+<div class="section">
+  <div class="section-header">
+    <div class="section-number">6</div>
+    <h2 data-lang="en">What Happens After a Good Conversation</h2>
+    <h2 data-lang="th">สิ่งที่ควรทำหลังจากการสนทนาที่ดี</h2>
+  </div>
+
+  <!-- EN Next Steps -->
+  <div class="card" data-lang="en">
+    <h3>Next Step Options (Always Propose One)</h3>
+    <table class="talk-table" style="margin-top:12px;">
+      <tr>
+        <th>Signal You Hear</th>
+        <th>Propose This</th>
+      </tr>
+      <tr>
+        <td class="label-col">High interest, technical team available</td>
+        <td><strong>Technical deep-dive / demo</strong> — Bring in Grafana SE. iZeno + Grafana Labs co-present. Tailor to their stack.</td>
+      </tr>
+      <tr>
+        <td class="label-col">Interested but early stage</td>
+        <td><strong>Free Grafana Cloud trial</strong> — They get a free-forever tier. Help them connect one data source and build their first dashboard.</td>
+      </tr>
+      <tr>
+        <td class="label-col">Cost is the driver</td>
+        <td><strong>Cost comparison / TCO analysis</strong> — Work with Grafana Labs to build a comparison against their current spend.</td>
+      </tr>
+      <tr>
+        <td class="label-col">Already using OSS Grafana</td>
+        <td><strong>Cloud migration assessment</strong> — Offer to review their self-hosted setup and show them what a managed migration looks like.</td>
+      </tr>
+      <tr>
+        <td class="label-col">Need to build internal case</td>
+        <td><strong>Executive briefing</strong> — Arrange a leadership-level session with Grafana Labs to discuss strategic value and roadmap.</td>
+      </tr>
+    </table>
+  </div>
+  <!-- TH Next Steps -->
+  <div class="card" data-lang="th">
+    <h3>ตัวเลือกขั้นตอนถัดไป (เสนอหนึ่งข้อเสมอ)</h3>
+    <table class="talk-table" style="margin-top:12px;">
+      <tr>
+        <th>สัญญาณที่ได้ยิน</th>
+        <th>เสนอสิ่งนี้</th>
+      </tr>
+      <tr>
+        <td class="label-col">สนใจมาก, มีทีมเทคนิค</td>
+        <td><strong>Technical deep-dive / สาธิต</strong> — นำ Grafana SE เข้ามา iZeno + Grafana Labs นำเสนอร่วมกัน ปรับให้ตรงกับ stack ของพวกเขา</td>
+      </tr>
+      <tr>
+        <td class="label-col">สนใจแต่ยังอยู่ในขั้นเริ่มต้น</td>
+        <td><strong>ทดลองใช้ Grafana Cloud ฟรี</strong> — พวกเขาได้ free-forever tier ช่วยเชื่อมต่อ data source หนึ่งตัวและสร้างแดชบอร์ดแรก</td>
+      </tr>
+      <tr>
+        <td class="label-col">ค่าใช้จ่ายเป็นตัวขับเคลื่อน</td>
+        <td><strong>เปรียบเทียบต้นทุน / วิเคราะห์ TCO</strong> — ทำงานกับ Grafana Labs เพื่อสร้างการเปรียบเทียบกับค่าใช้จ่ายปัจจุบัน</td>
+      </tr>
+      <tr>
+        <td class="label-col">ใช้ OSS Grafana อยู่แล้ว</td>
+        <td><strong>ประเมินการย้ายสู่ Cloud</strong> — เสนอตรวจสอบระบบที่โฮสต์เองและแสดงให้เห็นว่าการย้ายแบบ managed เป็นอย่างไร</td>
+      </tr>
+      <tr>
+        <td class="label-col">ต้องสร้างเคสภายในองค์กร</td>
+        <td><strong>Executive briefing</strong> — จัดเซสชันระดับผู้บริหารกับ Grafana Labs เพื่อพูดคุยเรื่องคุณค่าเชิงกลยุทธ์และ roadmap</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- EN CTA -->
+  <div class="cta-box" data-lang="en">
+    <div>
+      <h3>Ready to Engage a Customer?</h3>
+      <p>Reach out to your Grafana Labs channel team to co-plan the opportunity, get SE support, or request custom collateral.</p>
+    </div>
+    <div style="text-align:center;">
+      <div style="font-size:13px; color:rgba(255,255,255,0.5); margin-top:6px;">Contact: Rene Wong</div>
+    </div>
+  </div>
+  <!-- TH CTA -->
+  <div class="cta-box" data-lang="th">
+    <div>
+      <h3>พร้อมที่จะเข้าหาลูกค้าแล้วหรือยัง?</h3>
+      <p>ติดต่อทีม channel ของ Grafana Labs เพื่อวางแผนโอกาสร่วมกัน ขอการสนับสนุน SE หรือขอเอกสารที่ปรับแต่ง</p>
+    </div>
+    <div style="text-align:center;">
+      <div style="font-size:13px; color:rgba(255,255,255,0.5); margin-top:6px;">ติดต่อ: Rene Wong</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Sources & Methodology ── -->
+<div id="sources-methodology" style="margin-top:40px; padding:24px 32px; border-top:1px solid #e5e7eb; background:#f9fafb;">
+  <h4 style="font-size:13px; font-weight:700; color:#6b7280; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:12px;">Sources &amp; Methodology</h4>
+  <table style="font-size:12px; color:#6b7280; line-height:1.7; border-collapse:collapse; width:100%;">
+    <tr><td style="padding:3px 12px 3px 0; font-weight:600; white-space:nowrap; vertical-align:top;">Data source(s)</td><td>Manually maintained — Grafana Labs partner enablement content, product positioning, and field experience</td></tr>
+    <tr><td style="padding:3px 12px 3px 0; font-weight:600; white-space:nowrap; vertical-align:top;">Key filters</td><td>Scoped to Thailand market / iZeno partner context</td></tr>
+    <tr><td style="padding:3px 12px 3px 0; font-weight:600; white-space:nowrap; vertical-align:top;">Methodology</td><td>Conversational sales framework with pain-based discovery approach. Product positioning reflects Grafana Cloud and Enterprise as of April 2026. Thai translation provided for local partner enablement.</td></tr>
+    <tr><td style="padding:3px 12px 3px 0; font-weight:600; white-space:nowrap; vertical-align:top;">Generated</td><td>April 17, 2026</td></tr>
+    <tr><td style="padding:3px 12px 3px 0; font-weight:600; white-space:nowrap; vertical-align:top;">Owner</td><td>Rene Wong, Strategic Channel Manager — Grafana Labs</td></tr>
+    <tr><td style="padding:3px 12px 3px 0; font-weight:600; white-space:nowrap; vertical-align:top;">Update frequency</td><td>On demand</td></tr>
+  </table>
+</div>
+
+</div>
+
+<!-- Language Toggle Script -->
+<script>
+  let currentLang = 'en';
+  function toggleLang() {
+    currentLang = currentLang === 'en' ? 'th' : 'en';
+    document.body.classList.toggle('lang-th', currentLang === 'th');
+    document.getElementById('langSwitch').classList.toggle('th', currentLang === 'th');
+    document.getElementById('label-en').classList.toggle('active', currentLang === 'en');
+    document.getElementById('label-th').classList.toggle('active', currentLang === 'th');
+  }
+</script>
+
+</body>
+</html>
